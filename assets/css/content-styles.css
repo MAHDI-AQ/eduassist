@@ -1,0 +1,336 @@
+/* EduAssist Content Styles */
+/* Styles for the content script interface injected into educational platforms */
+
+/* Main Interface Container */
+#eduassist-interface {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: rtl;
+}
+
+.eduassist-modal {
+    background: white;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 1200px;
+    height: 90%;
+    max-height: 800px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: scale(0.9) translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Header */
+.eduassist-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.eduassist-header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.eduassist-close {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.eduassist-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Content */
+.eduassist-content {
+    flex: 1;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Loading State */
+#eduassist-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #666;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Features Section */
+#eduassist-features {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Tabs */
+.eduassist-tabs {
+    display: flex;
+    background: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    padding: 0 20px;
+}
+
+.eduassist-tab {
+    background: none;
+    border: none;
+    padding: 15px 25px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #666;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.eduassist-tab:hover {
+    color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+}
+
+.eduassist-tab.active {
+    color: #667eea;
+    border-bottom-color: #667eea;
+    font-weight: 600;
+}
+
+/* Features Grid */
+.eduassist-features-grid {
+    flex: 1;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.eduassist-feature-btn {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.eduassist-feature-btn:hover {
+    border-color: #667eea;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+}
+
+.eduassist-feature-btn i {
+    font-size: 32px;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.feature-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.feature-desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Welcome Notification */
+.eduassist-welcome {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(102, 126, 234, 0.3);
+    z-index: 999998;
+    animation: slideInRight 0.5s ease-out;
+    max-width: 350px;
+    direction: rtl;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.welcome-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.welcome-content strong {
+    font-size: 16px;
+}
+
+.welcome-content button {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.welcome-content button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .eduassist-modal {
+        width: 95%;
+        height: 95%;
+    }
+    
+    .eduassist-features-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .eduassist-tabs {
+        overflow-x: auto;
+        padding: 0 10px;
+    }
+    
+    .eduassist-tab {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    .eduassist-welcome {
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .eduassist-modal {
+        background: #2d3748;
+        color: #e2e8f0;
+    }
+    
+    .eduassist-tabs {
+        background: #4a5568;
+        border-bottom-color: #718096;
+    }
+    
+    .eduassist-tab {
+        color: #a0aec0;
+    }
+    
+    .eduassist-tab:hover {
+        background: rgba(102, 126, 234, 0.2);
+    }
+    
+    .eduassist-feature-btn {
+        background: #4a5568;
+        border-color: #718096;
+        color: #e2e8f0;
+    }
+    
+    .feature-title {
+        color: #e2e8f0;
+    }
+    
+    .feature-desc {
+        color: #a0aec0;
+    }
+}
+
+/* Scrollbar Styling */
+.eduassist-features-grid::-webkit-scrollbar {
+    width: 8px;
+}
+
+.eduassist-features-grid::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.eduassist-features-grid::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.eduassist-features-grid::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}

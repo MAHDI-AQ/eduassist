@@ -1,0 +1,21 @@
+<!-- EduAssist Icon 48x48 -->
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="48" height="48" rx="8" fill="#2E8B57"/>
+  
+  <!-- Book/Education Symbol -->
+  <rect x="8" y="18" width="32" height="22" rx="2" fill="#ffffff" opacity="0.95"/>
+  <rect x="10" y="21" width="28" height="3" fill="#2E8B57"/>
+  <rect x="10" y="26" width="20" height="2" fill="#2E8B57"/>
+  <rect x="10" y="30" width="24" height="2" fill="#2E8B57"/>
+  <rect x="10" y="34" width="18" height="2" fill="#2E8B57"/>
+  
+  <!-- Graduation Cap -->
+  <path d="M24 8 L36 12 L24 16 L12 12 Z" fill="#FFD700"/>
+  <rect x="23" y="8" width="2" height="8" fill="#FFD700"/>
+  <circle cx="35" cy="12" r="1.5" fill="#FFD700"/>
+  
+  <!-- Academic Elements -->
+  <circle cx="16" cy="14" r="1" fill="#FFD700" opacity="0.7"/>
+  <circle cx="32" cy="14" r="1" fill="#FFD700" opacity="0.7"/>
+</svg>

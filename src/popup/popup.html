@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduAssist - المساعد التعليمي</title>
+    <link rel="stylesheet" href="../../assets/css/popup-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="popup-container">
+        <!-- Header -->
+        <div class="popup-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <i class="fas fa-graduation-cap"></i>
+                    <div class="logo-text">
+                        <h1>EduAssist</h1>
+                        <span>المساعد التعليمي</span>
+                    </div>
+                </div>
+                <div class="version-badge">v1.0.0</div>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="tabs-container">
+            <div class="tab-nav">
+                <button class="tab-btn active" data-tab="dashboard">
+                    <i class="fas fa-home"></i>
+                    <span>الرئيسية</span>
+                </button>
+                <button class="tab-btn" data-tab="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>الإعدادات</span>
+                </button>
+                <button class="tab-btn" data-tab="about">
+                    <i class="fas fa-info-circle"></i>
+                    <span>حول التطبيق</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content-container">
+            <!-- Dashboard Tab -->
+            <div id="dashboard-tab" class="tab-content active">
+                <div class="welcome-section">
+                    <h2>مرحباً بك في EduAssist</h2>
+                    <p>المساعد التعليمي المجاني ومفتوح المصدر للمملكة العربية السعودية</p>
+                </div>
+
+                <div class="status-cards">
+                    <div class="status-card">
+                        <i class="fas fa-globe"></i>
+                        <div class="status-info">
+                            <h3>حالة الاتصال</h3>
+                            <span id="connection-status">متصل</span>
+                        </div>
+                    </div>
+                    <div class="status-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <div class="status-info">
+                            <h3>الحماية</h3>
+                            <span id="security-status">نشط</span>
+                        </div>
+                    </div>
+                    <div class="status-card">
+                        <i class="fas fa-download"></i>
+                        <div class="status-info">
+                            <h3>الملفات المحفوظة</h3>
+                            <span id="files-count">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="platform-section">
+                    <h3>المنصات المدعومة</h3>
+                    <div class="platform-cards">
+                        <div class="platform-card madrasati">
+                            <i class="fas fa-school"></i>
+                            <div class="platform-info">
+                                <h4>منصة مدرستي</h4>
+                                <p>تصدير بيانات الطلاب والحضور</p>
+                                <span class="status-indicator ready">جاهز</span>
+                            </div>
+                        </div>
+                        <div class="platform-card noor">
+                            <i class="fas fa-user-graduate"></i>
+                            <div class="platform-info">
+                                <h4>نظام نور</h4>
+                                <p>إدارة وتصدير التقارير</p>
+                                <span class="status-indicator ready">جاهز</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <h3>إجراءات سريعة</h3>
+                    <div class="action-buttons">
+                        <button class="action-btn" id="export-data">
+                            <i class="fas fa-download"></i>
+                            تصدير البيانات
+                        </button>
+                        <button class="action-btn" id="backup-settings">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            نسخ احتياطي
+                        </button>
+                        <button class="action-btn" id="help-guide">
+                            <i class="fas fa-question-circle"></i>
+                            دليل المساعدة
+                        </button>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h3>النشاط الأخير</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <i class="fas fa-file-csv"></i>
+                            <div class="activity-info">
+                                <span class="activity-title">تم تصدير بيانات الطلاب</span>
+                                <span class="activity-time">منذ 5 دقائق</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <div class="activity-info">
+                                <span class="activity-title">تم إنشاء تقرير الحضور</span>
+                                <span class="activity-time">منذ ساعة</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="features-section">
+                    <h3>مزايا EduAssist</h3>
+                    <div class="features-table">
+                        <div class="feature-row">
+                            <span class="feature-name">السعر</span>
+                            <span class="eduassist-value">مجاني 100% 🎉</span>
+                        </div>
+                        <div class="feature-row">
+                            <span class="feature-name">المصدر</span>
+                            <span class="eduassist-value">مفتوح المصدر 📖</span>
+                        </div>
+                        <div class="feature-row">
+                            <span class="feature-name">الخصوصية</span>
+                            <span class="eduassist-value">محلي ومحمي 🔒</span>
+                        </div>
+                        <div class="feature-row">
+                            <span class="feature-name">السرعة</span>
+                            <span class="eduassist-value">فائق السرعة ⚡</span>
+                        </div>
+                        <div class="feature-row">
+                            <span class="feature-name">التطوير</span>
+                            <span class="eduassist-value">مجتمعي وتطوعي 🤝</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div id="settings-tab" class="tab-content">
+                <div class="settings-section">
+                    <h2>الإعدادات</h2>
+                    
+                    <div class="setting-group">
+                        <h3>الإعدادات العامة</h3>
+                        <div class="setting-item">
+                            <label for="auto-detect">
+                                <input type="checkbox" id="auto-detect" checked>
+                                الكشف التلقائي للمنصة
+                            </label>
+                            <p class="setting-description">تفعيل المساعد تلقائياً عند زيارة المنصات التعليمية</p>
+                        </div>
+                        <div class="setting-item">
+                            <label for="notifications">
+                                <input type="checkbox" id="notifications" checked>
+                                إشعارات النجاح
+                            </label>
+                            <p class="setting-description">عرض إشعارات عند نجاح العمليات</p>
+                        </div>
+                        <div class="setting-item">
+                            <label for="auto-backup">
+                                <input type="checkbox" id="auto-backup">
+                                النسخ الاحتياطي التلقائي
+                            </label>
+                            <p class="setting-description">حفظ نسخة احتياطية من البيانات المصدرة</p>
+                        </div>
+                    </div>
+
+                    <div class="setting-group">
+                        <h3>إعدادات التصدير</h3>
+                        <div class="setting-item">
+                            <label for="export-format">تنسيق التصدير:</label>
+                            <select id="export-format">
+                                <option value="csv">CSV</option>
+                                <option value="xlsx">Excel</option>
+                                <option value="json">JSON</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <label for="filename-format">تنسيق اسم الملف:</label>
+                            <select id="filename-format">
+                                <option value="date-platform">التاريخ - المنصة</option>
+                                <option value="platform-date">المنصة - التاريخ</option>
+                                <option value="custom">مخصص</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="setting-group">
+                        <h3>الصيانة</h3>
+                        <div class="setting-actions">
+                            <button class="setting-btn" id="clear-cache">
+                                <i class="fas fa-trash"></i>
+                                مسح الكاش
+                            </button>
+                            <button class="setting-btn" id="reset-settings">
+                                <i class="fas fa-undo"></i>
+                                إعادة تعيين الإعدادات
+                            </button>
+                            <button class="setting-btn" id="export-settings">
+                                <i class="fas fa-download"></i>
+                                تصدير الإعدادات
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Tab -->
+            <div id="about-tab" class="tab-content">
+                <div class="about-section">
+                    <div class="about-header">
+                        <i class="fas fa-heart text-red"></i>
+                        <h2>مشروع مفتوح المصدر</h2>
+                        <p>صُنع بحب للمجتمع التعليمي السعودي</p>
+                    </div>
+
+                    <div class="about-content">
+                        <div class="info-card">
+                            <h3>عن المشروع</h3>
+                            <p>EduAssist هو مساعد تعليمي مجاني ومفتوح المصدر، مصمم خصيصاً للكادر الإداري والتعليمي في المملكة العربية السعودية. يهدف إلى تسهيل المهام اليومية وتوفير أدوات فعالة لإدارة البيانات التعليمية.</p>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>الرؤية</h3>
+                            <p>نسعى لتوفير أدوات تقنية متقدمة ومجانية تخدم التعليم في المملكة، وتساهم في تطوير العملية التعليمية من خلال التكنولوجيا المفتوحة.</p>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>المزايا الرئيسية</h3>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> مجاني بالكامل</li>
+                                <li><i class="fas fa-check"></i> مفتوح المصدر</li>
+                                <li><i class="fas fa-check"></i> يحافظ على الخصوصية</li>
+                                <li><i class="fas fa-check"></i> سهل الاستخدام</li>
+                                <li><i class="fas fa-check"></i> دعم كامل للغة العربية</li>
+                                <li><i class="fas fa-check"></i> تطوير مجتمعي</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>الدعم والمساهمة</h3>
+                            <p>هذا المشروع مدعوم من المجتمع ويرحب بمساهمات المطورين والمعلمين. يمكنك المساهمة في تطوير المشروع أو الإبلاغ عن المشاكل عبر منصة GitHub.</p>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="#" class="social-link github">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                            <a href="#" class="social-link docs">
+                                <i class="fas fa-book"></i>
+                                التوثيق
+                            </a>
+                            <a href="#" class="social-link support">
+                                <i class="fas fa-life-ring"></i>
+                                الدعم
+                            </a>
+                        </div>
+
+                        <div class="version-info">
+                            <p><strong>الإصدار:</strong> 1.0.0</p>
+                            <p><strong>تاريخ الإصدار:</strong> سبتمبر 2025</p>
+                            <p><strong>الترخيص:</strong> MIT License</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

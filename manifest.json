@@ -1,0 +1,68 @@
+{
+  "manifest_version": 3,
+  "name": "EduAssist - المساعد التعليمي",
+  "name_en": "EduAssist - Educational Assistant", 
+  "description": "مساعد تعليمي مجاني ومفتوح المصدر للكادر الإداري والتعليمي بالمملكة العربية السعودية",
+  "description_en": "Free and open-source educational assistant for administrative and teaching staff in Saudi Arabia",
+  "version": "1.0.0",
+  "icons": {
+    "16": "assets/icons/icon16.svg",
+    "48": "assets/icons/icon48.svg",
+    "128": "assets/icons/icon128.svg"
+  },
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "EduAssist",
+    "default_icon": {
+      "16": "assets/icons/icon16.svg",
+      "48": "assets/icons/icon48.svg",
+      "128": "assets/icons/icon128.svg"
+    }
+  },
+  "background": {
+    "service_worker": "src/background/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.madrasati.sa/*",
+        "https://*.moe.gov.sa/*", 
+        "https://noor.moe.gov.sa/*",
+        "https://*.noor.moe.gov.sa/*"
+      ],
+      "js": [
+        "src/utils/jquery.min.js",
+        "src/utils/helpers.js",
+        "src/content/content-main.js"
+      ],
+      "css": [
+        "assets/css/content-styles.css"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/features/*.js",
+        "assets/css/*.css",
+        "assets/icons/*.png"
+      ],
+      "matches": [
+        "https://*.madrasati.sa/*",
+        "https://*.moe.gov.sa/*",
+        "https://noor.moe.gov.sa/*",
+        "https://*.noor.moe.gov.sa/*"
+      ]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.madrasati.sa/*",
+    "https://*.moe.gov.sa/*"
+  ]
+}
