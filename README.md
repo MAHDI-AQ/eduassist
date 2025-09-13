@@ -6,9 +6,7 @@
 
 **مساعد تعليمي مجاني ومفتوح المصدر للمملكة العربية السعودية**
 
-[![Chrome Web Store](https://img.shields.io/badge/Chrome-Extension-brightgreen?style=f1. Download the code from GitHub:
-   ```bash
-   git clone https://github.com/MAHDI-AQ/eduassist.git-square&logo=google-chrome)](https://chrome.google.com/webstore)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome-Extension-brightgreen?style=flat-square&logo=google-chrome)](https://chrome.google.com/webstore)
 [![GitHub license](https://img.shields.io/github/license/MAHDI-AQ/eduassist?style=flat-square)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/MAHDI-AQ/eduassist?style=flat-square)](https://github.com/MAHDI-AQ/eduassist/stargazers)
 [![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-red?style=flat-square)](https://github.com/MAHDI-AQ/eduassist)
@@ -50,14 +48,14 @@
 
 ### 🚀 التثبيت والاستخدام
 
-#### الطريقة الأولى: من متجر Chrome (الأسهل)
+#### الطريقة الأولى: من متجر Chrome (قريباً)
 1. افتح [متجر Chrome الإلكتروني](https://chrome.google.com/webstore)
 2. ابحث عن "EduAssist"
 3. اضغط "إضافة إلى Chrome"
 4. اقبل الصلاحيات المطلوبة
 5. ستظهر أيقونة الامتداد في شريط الأدوات
 
-#### الطريقة الثانية: التثبيت المطور (للمطورين)
+#### الطريقة الثانية: التثبيت المطور (حالياً)
 1. حمّل الكود من GitHub:
    ```bash
    git clone https://github.com/MAHDI-AQ/eduassist.git
@@ -69,9 +67,10 @@
 
 ### 📱 دليل التثبيت للمتصفحات المختلفة
 
-#### 🌐 Google Chrome
+<details>
+<summary><strong>🌐 Google Chrome</strong></summary>
 
-**بالعربية:**
+**العربية:**
 1. افتح متصفح Chrome
 2. اذهب إلى القائمة (ثلاث نقاط) > المزيد من الأدوات > الإضافات
 3. فعّل "وضع المطور" في الزاوية اليمنى العلوية
@@ -79,7 +78,7 @@
 5. اختر مجلد EduAssist
 6. ستظهر الإضافة في قائمة الإضافات
 
-**In English:**
+**English:**
 1. Open Chrome browser
 2. Go to Menu (three dots) > More tools > Extensions
 3. Enable "Developer mode" in the top right corner
@@ -87,67 +86,77 @@
 5. Select the EduAssist folder
 6. The extension will appear in your extensions list
 
-#### 🦊 Mozilla Firefox
+</details>
 
-**بالعربية:**
-> **ملاحظة:** Firefox يتطلب تحويل الإضافة إلى Manifest V2. حالياً الإضافة مخصصة لـ Chrome فقط.
+<details>
+<summary><strong>⚡ Microsoft Edge</strong></summary>
 
-**In English:**
-> **Note:** Firefox requires converting the extension to Manifest V2. Currently, the extension is Chrome-specific.
-
-#### ⚡ Microsoft Edge
-
-**بالعربية:**
+**العربية:**
 1. افتح متصفح Edge
 2. اذهب إلى القائمة (ثلاث نقاط) > الإضافات
-3. فعّل "وضع المطور" في الجانب الأيسر
+3. فعّل "وضع المطور" في الزاوية اليسرى السفلية
 4. اضغط "تحميل الإضافة غير المضغوطة"
 5. اختر مجلد EduAssist
-6. ستعمل الإضافة بنفس طريقة Chrome
+6. تعمل تماماً مثل Chrome
 
-**In English:**
+**English:**
 1. Open Edge browser
 2. Go to Menu (three dots) > Extensions
-3. Enable "Developer mode" on the left side
+3. Enable "Developer mode" in the bottom left corner
 4. Click "Load unpacked"
 5. Select the EduAssist folder
-6. Extension will work same as Chrome
+6. Works exactly like Chrome
 
-#### 🌊 Opera
+</details>
 
-**بالعربية:**
+<details>
+<summary><strong>🎭 Opera</strong></summary>
+
+**العربية:**
 1. افتح متصفح Opera
-2. اذهب إلى Menu > Extensions > Extensions
+2. اذهب إلى القائمة > الإضافات > إدارة الإضافات
 3. فعّل "وضع المطور" في الزاوية اليمنى العلوية
 4. اضغط "تحميل الإضافة غير المضغوطة"
 5. اختر مجلد EduAssist
-6. الإضافة متوافقة مع محرك Chromium
 
-**In English:**
+**English:**
 1. Open Opera browser
-2. Go to Menu > Extensions > Extensions
-3. Enable "Developer mode" in top right corner
-4. Click "Load unpacked extension"
-5. Select EduAssist folder
-6. Compatible with Chromium engine
+2. Go to Menu > Extensions > Manage Extensions
+3. Enable "Developer mode" in the top right corner
+4. Click "Load unpacked"
+5. Select the EduAssist folder
 
-#### 🦁 Brave Browser
+</details>
 
-**بالعربية:**
+<details>
+<summary><strong>🦁 Brave</strong></summary>
+
+**العربية:**
 1. افتح متصفح Brave
 2. اذهب إلى القائمة > الإضافات
 3. فعّل "وضع المطور"
 4. اضغط "تحميل الإضافة غير المضغوطة"
 5. اختر مجلد EduAssist
-6. يعمل بنفس طريقة Chrome تماماً
 
-**In English:**
+**English:**
 1. Open Brave browser
 2. Go to Menu > Extensions
 3. Enable "Developer mode"
 4. Click "Load unpacked"
-5. Select EduAssist folder
-6. Works exactly like Chrome
+5. Select the EduAssist folder
+
+</details>
+
+<details>
+<summary><strong>🦊 Mozilla Firefox</strong></summary>
+
+**العربية:**
+> **ملاحظة:** Firefox يتطلب تحويل الإضافة إلى Manifest V2. حالياً الإضافة مخصصة للمتصفحات المبنية على Chromium فقط.
+
+**English:**
+> **Note:** Firefox requires converting the extension to Manifest V2. Currently, the extension is designed for Chromium-based browsers only.
+
+</details>
 
 ### 🔧 كيفية الاستخدام
 
@@ -174,26 +183,15 @@
 
 ### 🤝 المساهمة في المشروع
 
-نرحب بمساهمات الجميع! يمكنك المساهمة بـ:
+نرحب بمساهمات الجميع! يمكنك المساهمة من خلال:
 
-#### للمطورين:
-- **تطوير ميزات جديدة** - أضف وظائف مفيدة
-- **إصلاح الأخطاء** - ساعد في تحسين الاستقرار
-- **تحسين الكود** - اقترح تحسينات تقنية
-- **ترجمة** - أضف دعم لغات جديدة
+- **تطوير ميزات جديدة** - أضف وظائف مفيدة للمجتمع التعليمي
+- **إصلاح الأخطاء** - ساعد في تحسين الاستقرار والأداء
+- **تحسين التوثيق** - اكتب أدلة وشروحات أفضل
+- **اختبار وتجريب** - استخدم الإضافة وأبلغ عن المشاكل
+- **اقتراح ميزات** - أخبرنا عن احتياجاتك واقتراحاتك
 
-#### للمعلمين والإداريين:
-- **تجريب واختبار** - استخدم الإضافة وأبلغ عن المشاكل
-- **اقتراح ميزات** - أخبرنا عن احتياجاتك
-- **نشر الكلمة** - شارك المشروع مع زملائك
-- **توثيق** - ساعد في تحسين الدليل
-
-#### خطوات المساهمة:
-1. فرّع المشروع (Fork)
-2. أنشئ فرع جديد (`git checkout -b feature/amazing-feature`)
-3. أضف تغييراتك (`git commit -m 'Add amazing feature'`)
-4. ادفع التغييرات (`git push origin feature/amazing-feature`)
-5. أنشئ Pull Request
+لمعرفة تفاصيل المساهمة، راجع ملف [المساهمة](docs/CONTRIBUTING.md).
 
 ### 📞 الدعم والمساعدة
 
@@ -201,64 +199,47 @@
 - **التوثيق:** [wiki](https://github.com/MAHDI-AQ/eduassist/wiki)
 - **المجتمع:** [Discussions](https://github.com/MAHDI-AQ/eduassist/discussions)
 
-### 📊 إحصائيات المشروع
-
-- **اللغة الأساسية:** JavaScript (ES6+)
-- **الإطار:** Chrome Extension Manifest V3
-- **حجم الكود:** ~50KB
-- **المتطلبات:** Chrome 88+ أو Edge 88+
-- **الترخيص:** MIT
-
-### 🙏 شكر وتقدير
-
-هذا المشروع صُنع بحب ❤️ للمجتمع التعليمي في المملكة العربية السعودية. شكراً لكل من ساهم في تطويره وتحسينه.
-
-**مطورو المشروع:**
-- فريق تطوير EduAssist
-- المجتمع التعليمي السعودي
-- المساهمون في GitHub
-
 ---
 
 ## English
 
-### 📖 About
+### 📖 About the Project
 
-**EduAssist** is a free and open-source Chrome extension designed specifically for educational and administrative staff in Saudi Arabia. The project aims to simplify daily tasks and provide effective tools for managing educational data securely and privately.
+**EduAssist** is a free and open-source Chrome extension designed specifically for administrative and educational staff in Saudi Arabia. The project aims to facilitate daily tasks and provide effective tools for managing educational data in a safe and secure manner.
 
 ### ✨ Key Features
 
 - **🆓 Completely Free** - No fees or subscriptions
-- **🔓 Open Source** - Full code transparency
-- **🔒 Secure & Private** - All data processed locally in browser
-- **🇸🇦 Made for Saudi Arabia** - Full Arabic support and local platforms
-- **⚡ Fast & Efficient** - Optimized performance and smooth UX
-- **🤝 Community-Driven** - Collaborative development by education community
+- **🔓 Open Source** - Complete code transparency
+- **🔒 Safe & Secure** - All data processed locally in your browser
+- **🇸🇦 Saudi-Focused** - Full Arabic language and local platform support
+- **⚡ Fast & Efficient** - Optimized performance and smooth user experience
+- **🤝 Community-Driven** - Collaborative development by the educational community
 
 ### 🏫 Supported Platforms
 
 #### Madrasati Platform (Madrasati.sa)
-- Export student and class data
-- Export attendance records
-- Generate custom reports
-- UI/UX improvements
+- Student and class data export
+- Attendance and absence records export
+- Custom report generation
+- User interface improvements
 
 #### Noor System (Noor.moe.gov.sa)
-- Extract administrative data
-- Export reports and statistics
-- Accelerate navigation processes
+- Administrative data extraction
+- Reports and statistics export
+- Navigation acceleration
 - Multi-format data processing
 
 ### 🚀 Installation & Usage
 
-#### Method 1: Chrome Web Store (Easiest)
+#### Method 1: Chrome Web Store (Coming Soon)
 1. Open [Chrome Web Store](https://chrome.google.com/webstore)
 2. Search for "EduAssist"
 3. Click "Add to Chrome"
 4. Accept required permissions
 5. Extension icon will appear in toolbar
 
-#### Method 2: Developer Installation
+#### Method 2: Developer Installation (Currently)
 1. Download code from GitHub:
    ```bash
    git clone https://github.com/MAHDI-AQ/eduassist.git
@@ -295,17 +276,13 @@
 
 We welcome contributions from everyone! You can contribute by:
 
-#### For Developers:
-- **Develop new features** - Add useful functionality
-- **Fix bugs** - Help improve stability
-- **Code improvements** - Suggest technical enhancements
-- **Translation** - Add support for new languages
-
-#### For Teachers & Administrators:
+- **Developing new features** - Add useful functionality for the educational community
+- **Fixing bugs** - Help improve stability and performance
+- **Improving documentation** - Write better guides and explanations
 - **Testing** - Use the extension and report issues
-- **Feature requests** - Tell us about your needs
-- **Spread the word** - Share the project with colleagues
-- **Documentation** - Help improve the guide
+- **Suggesting features** - Tell us about your needs and suggestions
+
+For contribution details, see [Contributing Guide](docs/CONTRIBUTING.md).
 
 ### 📞 Support & Help
 
@@ -317,13 +294,8 @@ We welcome contributions from everyone! You can contribute by:
 
 - **Primary Language:** JavaScript (ES6+)
 - **Framework:** Chrome Extension Manifest V3
-- **Code Size:** ~50KB
 - **Requirements:** Chrome 88+ or Edge 88+
 - **License:** MIT
-
-### 🙏 Acknowledgments
-
-This project was made with love ❤️ for the educational community in Saudi Arabia. Thanks to everyone who contributed to its development and improvement.
 
 ---
 
