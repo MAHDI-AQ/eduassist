@@ -17,11 +17,13 @@
 
 ---
 
+<div dir="rtl" lang="ar">
+
 ## العربية
 
 ### 📖 نبذة عن المشروع
 
-**EduAssist** هو امتداد مجاني ومفتوح المصدر لمتصفح Chrome، مصمم خصيصاً للكادر الإداري والتعليمي في المملكة العربية السعودية. يهدف المشروع إلى تسهيل المهام اليومية وتوفير أدوات فعالة لإدارة البيانات التعليمية بطريقة آمنة ومحمية.
+**<bdi>EduAssist</bdi>** هو امتداد مجاني ومفتوح المصدر لمتصفح <span dir="ltr">Chrome</span>، مصمم خصيصاً للكادر الإداري والتعليمي في المملكة العربية السعودية. يهدف المشروع إلى تسهيل المهام اليومية وتوفير أدوات فعالة لإدارة البيانات التعليمية بطريقة آمنة ومحمية.
 
 ### ✨ المزايا الرئيسية
 
@@ -34,13 +36,13 @@
 
 ### 🏫 المنصات المدعومة
 
-#### منصة مدرستي (Madrasati.sa)
+#### منصة مدرستي (<span dir="ltr">Madrasati.sa</span>)
 - تصدير بيانات الطلاب والفصول
 - تصدير سجلات الحضور والغياب
 - إنشاء تقارير مخصصة
 - تحسينات واجهة المستخدم
 
-#### نظام نور (Noor.moe.gov.sa)
+#### نظام نور (<span dir="ltr">Noor.moe.gov.sa</span>)
 - استخراج البيانات الإدارية
 - تصدير التقارير والإحصائيات
 - تسريع عمليات التنقل
@@ -48,34 +50,34 @@
 
 ### 🚀 التثبيت والاستخدام
 
-#### الطريقة الأولى: من متجر Chrome (قريباً)
-1. افتح [متجر Chrome الإلكتروني](https://chrome.google.com/webstore)
-2. ابحث عن "EduAssist"
-3. اضغط "إضافة إلى Chrome"
+#### الطريقة الأولى: من متجر <span dir="ltr">Chrome</span> (قريباً)
+1. افتح [متجر <span dir="ltr">Chrome</span> الإلكتروني](https://chrome.google.com/webstore)
+2. ابحث عن "<bdi>EduAssist</bdi>"
+3. اضغط "إضافة إلى <span dir="ltr">Chrome</span>"
 4. اقبل الصلاحيات المطلوبة
 5. ستظهر أيقونة الامتداد في شريط الأدوات
 
 #### الطريقة الثانية: التثبيت المطور (حالياً)
-1. حمّل الكود من GitHub:
+1. حمّل الكود من <span dir="ltr">GitHub</span>:
    ```bash
    git clone https://github.com/MAHDI-AQ/eduassist.git
    ```
-2. افتح Chrome واذهب إلى `chrome://extensions/`
-3. فعّل "وضع المطور" (Developer mode)
-4. اضغط "تحميل غير مضغوط" (Load unpacked)
+2. افتح <span dir="ltr">Chrome</span> واذهب إلى: `chrome://extensions/`
+3. فعّل "<span dir="ltr">Developer mode</span>" 
+4. اضغط "<span dir="ltr">Load unpacked</span>"
 5. اختر مجلد المشروع
 
 ### 📱 دليل التثبيت للمتصفحات المختلفة
 
 <details>
-<summary><strong>🌐 Google Chrome</strong></summary>
+<summary><strong>🌐 <span dir="ltr">Google Chrome</span></strong></summary>
 
 **العربية:**
-1. افتح متصفح Chrome
-2. اذهب إلى القائمة (ثلاث نقاط) > المزيد من الأدوات > الإضافات
-3. فعّل "وضع المطور" في الزاوية اليمنى العلوية
-4. اضغط "تحميل الإضافة غير المضغوطة"
-5. اختر مجلد EduAssist
+1. افتح متصفح <span dir="ltr">Chrome</span>
+2. اذهب إلى القائمة (ثلاث نقاط) ← المزيد من الأدوات ← الإضافات
+3. فعّل "<span dir="ltr">Developer mode</span>" في الزاوية اليمنى العلوية
+4. اضغط "<span dir="ltr">Load unpacked</span>"
+5. اختر مجلد <bdi>EduAssist</bdi>
 6. ستظهر الإضافة في قائمة الإضافات
 
 **English:**
@@ -89,15 +91,15 @@
 </details>
 
 <details>
-<summary><strong>⚡ Microsoft Edge</strong></summary>
+<summary><strong>⚡ <span dir="ltr">Microsoft Edge</span></strong></summary>
 
 **العربية:**
-1. افتح متصفح Edge
-2. اذهب إلى القائمة (ثلاث نقاط) > الإضافات
-3. فعّل "وضع المطور" في الزاوية اليسرى السفلية
-4. اضغط "تحميل الإضافة غير المضغوطة"
-5. اختر مجلد EduAssist
-6. تعمل تماماً مثل Chrome
+1. افتح متصفح <span dir="ltr">Edge</span>
+2. اذهب إلى القائمة (ثلاث نقاط) ← الإضافات
+3. فعّل "<span dir="ltr">Developer mode</span>" في الزاوية اليسرى السفلية
+4. اضغط "<span dir="ltr">Load unpacked</span>"
+5. اختر مجلد <bdi>EduAssist</bdi>
+6. تعمل تماماً مثل <span dir="ltr">Chrome</span>
 
 **English:**
 1. Open Edge browser
@@ -110,14 +112,14 @@
 </details>
 
 <details>
-<summary><strong>🎭 Opera</strong></summary>
+<summary><strong>🎭 <span dir="ltr">Opera</span></strong></summary>
 
 **العربية:**
-1. افتح متصفح Opera
-2. اذهب إلى القائمة > الإضافات > إدارة الإضافات
-3. فعّل "وضع المطور" في الزاوية اليمنى العلوية
-4. اضغط "تحميل الإضافة غير المضغوطة"
-5. اختر مجلد EduAssist
+1. افتح متصفح <span dir="ltr">Opera</span>
+2. اذهب إلى القائمة ← الإضافات ← إدارة الإضافات
+3. فعّل "<span dir="ltr">Developer mode</span>" في الزاوية اليمنى العلوية
+4. اضغط "<span dir="ltr">Load unpacked</span>"
+5. اختر مجلد <bdi>EduAssist</bdi>
 
 **English:**
 1. Open Opera browser
@@ -129,14 +131,14 @@
 </details>
 
 <details>
-<summary><strong>🦁 Brave</strong></summary>
+<summary><strong>🦁 <span dir="ltr">Brave</span></strong></summary>
 
 **العربية:**
-1. افتح متصفح Brave
-2. اذهب إلى القائمة > الإضافات
-3. فعّل "وضع المطور"
-4. اضغط "تحميل الإضافة غير المضغوطة"
-5. اختر مجلد EduAssist
+1. افتح متصفح <span dir="ltr">Brave</span>
+2. اذهب إلى القائمة ← الإضافات
+3. فعّل "<span dir="ltr">Developer mode</span>"
+4. اضغط "<span dir="ltr">Load unpacked</span>"
+5. اختر مجلد <bdi>EduAssist</bdi>
 
 **English:**
 1. Open Brave browser
@@ -148,29 +150,28 @@
 </details>
 
 <details>
-<summary><strong>🦊 Mozilla Firefox</strong></summary>
+<summary><strong>🦊 <span dir="ltr">Mozilla Firefox</span></strong></summary>
 
 **العربية:**
-> **ملاحظة:** Firefox يتطلب تحويل الإضافة إلى Manifest V2. حالياً الإضافة مخصصة للمتصفحات المبنية على Chromium فقط.
+> **ملاحظة:** <span dir="ltr">Firefox</span> يتطلب تحويل الإضافة إلى <span dir="ltr">Manifest V2</span>. حالياً الإضافة مخصصة للمتصفحات المبنية على <span dir="ltr">Chromium</span> فقط.
 
 **English:**
 > **Note:** Firefox requires converting the extension to Manifest V2. Currently, the extension is designed for Chromium-based browsers only.
 
 </details>
-
 ### 🔧 كيفية الاستخدام
 
 1. **زيارة المنصة التعليمية**
-   - اذهب إلى madrasati.sa أو noor.moe.gov.sa
-   - ستظهر أدوات EduAssist تلقائياً
+   - اذهب إلى موقع <span dir="ltr">madrasati.sa</span> أو <span dir="ltr">noor.moe.gov.sa</span>
+   - ستظهر أدوات <bdi>EduAssist</bdi> تلقائياً
 
 2. **تصدير البيانات**
    - ابحث عن أزرار "تصدير" الجديدة في الصفحات
-   - اختر التنسيق المطلوب (CSV, Excel, JSON)
+   - اختر التنسيق المطلوب (<span dir="ltr">CSV</span>، <span dir="ltr">Excel</span>، <span dir="ltr">JSON</span>)
    - احفظ الملف في المكان المناسب
 
 3. **إدارة الإعدادات**
-   - اضغط على أيقونة EduAssist في شريط الأدوات
+   - اضغط على أيقونة <bdi>EduAssist</bdi> في شريط الأدوات
    - انتقل إلى تبويب "الإعدادات"
    - خصص الخيارات حسب احتياجك
 
@@ -195,9 +196,61 @@
 
 ### 📞 الدعم والمساعدة
 
-- **GitHub Issues:** [رابط المشاكل](https://github.com/MAHDI-AQ/eduassist/issues)
-- **التوثيق:** [wiki](https://github.com/MAHDI-AQ/eduassist/wiki)
-- **المجتمع:** [Discussions](https://github.com/MAHDI-AQ/eduassist/discussions)
+- **<span dir="ltr">GitHub Issues</span>:** [رابط المشاكل](https://github.com/MAHDI-AQ/eduassist/issues)
+- **التوثيق:** [<span dir="ltr">wiki</span>](https://github.com/MAHDI-AQ/eduassist/wiki)
+- **المجتمع:** [النقاشات](https://github.com/MAHDI-AQ/eduassist/discussions)
+
+---
+
+## 📋 معلومات إضافية
+
+### 📁 ملفات التوثيق
+
+- **[ملف المساهمة](docs/CONTRIBUTING.md)** - دليل شامل للمطورين الراغبين في المساهمة
+- **[دليل التوزيع](docs/DISTRIBUTION.md)** - تعليمات نشر وتوزيع الإضافة
+- **[إعداد <span dir="ltr">Git</span>](docs/GIT_SETUP.md)** - كيفية إعداد بيئة التطوير
+- **[حالة المشروع](docs/PROJECT_STATUS.md)** - تحديثات ومسار تطوير المشروع
+
+### 🎯 المزيد من المعلومات
+
+<details>
+<summary><strong>⚠️ إخلاء المسؤولية</strong></summary>
+
+هذه الإضافة مطورة بشكل مستقل وليست مرتبطة رسمياً بوزارة التعليم أو أي جهة حكومية. تم تطويرها لتسهيل العمل على المعلمين والإداريين في التعامل مع البيانات التعليمية.
+
+*This extension is developed independently and is not officially affiliated with the Ministry of Education or any government entity. It was developed to facilitate the work of teachers and administrators in dealing with educational data.*
+
+</details>
+
+<details>
+<summary><strong>📈 إصدارات قادمة</strong></summary>
+
+- دعم منصات تعليمية إضافية
+- ميزات تحليل البيانات المتقدمة  
+- واجهة مستخدم محسنة
+- دعم التصدير المجمع
+- أدوات إنتاجية إضافية
+
+*Support for additional educational platforms, advanced data analysis features, enhanced user interface, bulk export support, additional productivity tools*
+
+</details>
+
+### � الترخيص
+
+هذا المشروع مرخص تحت [رخصة <span dir="ltr">MIT</span>](LICENSE) - راجع ملف الترخيص لمزيد من التفاصيل.
+
+---
+
+<div align="center">
+
+**صُنع بـ ❤️ للمجتمع التعليمي السعودي**
+
+*Made with ❤️ for the Saudi Educational Community*
+
+[![نجمة على <span dir="ltr">GitHub</span>](https://img.shields.io/github/stars/MAHDI-AQ/eduassist?style=social)](https://github.com/MAHDI-AQ/eduassist/stargazers)
+[![تابع على <span dir="ltr">GitHub</span>](https://img.shields.io/github/followers/MAHDI-AQ?style=social)](https://github.com/MAHDI-AQ)
+
+</div>
 
 ---
 
@@ -218,13 +271,13 @@
 
 ### 🏫 Supported Platforms
 
-#### Madrasati Platform (Madrasati.sa)
+#### Madrasati Platform
 - Student and class data export
 - Attendance and absence records export
 - Custom report generation
 - User interface improvements
 
-#### Noor System (Noor.moe.gov.sa)
+#### Noor System
 - Administrative data extraction
 - Reports and statistics export
 - Navigation acceleration
@@ -233,7 +286,7 @@
 ### 🚀 Installation & Usage
 
 #### Method 1: Chrome Web Store (Coming Soon)
-1. Open [Chrome Web Store](https://chrome.google.com/webstore)
+1. Open Chrome Web Store
 2. Search for "EduAssist"
 3. Click "Add to Chrome"
 4. Accept required permissions
