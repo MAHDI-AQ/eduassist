@@ -1,10 +1,8 @@
 {
   "manifest_version": 3,
   "name": "EduAssist - المساعد التعليمي",
-  "name_en": "EduAssist - Educational Assistant", 
   "description": "أداة مجانية لتصدير البيانات من منصة مدرستي ونظام نور",
-  "description_en": "Free tool for exporting data from Madrasati and Noor educational platforms",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "icons": {
     "16": "assets/icons/icon16.png",
     "48": "assets/icons/icon48.png",
@@ -59,7 +57,9 @@
   "permissions": [
     "storage",
     "activeTab",
-    "scripting"
+    "scripting",
+    "alarms",
+    "contextMenus"
   ],
   "host_permissions": [
     "https://*.madrasati.sa/*",

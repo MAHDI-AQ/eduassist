@@ -16,6 +16,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Future bug fixes will be listed here
 
+## [1.0.1] - 2025-09-14
+
+### Fixed
+- **Critical**: Fixed service worker registration failure (Status code: 15)
+- **Critical**: Fixed `TypeError: Cannot read properties of undefined (reading 'onClicked')` in background script
+- Enhanced Chrome extension API availability checks with proper null-safe validation
+- Added comprehensive error handling throughout the background service worker
+- Fixed unsafe API access for `chrome.contextMenus` and `chrome.alarms` APIs
+- Removed reference to non-existent welcome.html file
+- Improved extension startup reliability with better error recovery
+
+### Changed
+- Updated manifest version to match build script (1.0.1)
+- Wrapped entire service worker in error handling for better stability
+- Enhanced logging for better debugging and error tracking
+- Improved graceful degradation when Chrome APIs are unavailable
+
+### Technical Improvements
+- Added try-catch blocks to all async operations in background script
+- Implemented safer API detection using optional chaining and typeof checks
+- Added error logging to Chrome storage for debugging purposes
+- Enhanced build process stability
+
 ## [1.0.0] - 2025-09-14
 
 ### Added

@@ -1,77 +1,106 @@
 // EduAssist Background Service Worker
 // Handles extension lifecycle, storage, and communication
 
-console.log('🎓 EduAssist Background Service Worker Started');
+// Wrap the entire service worker in error handling
+(() => {
+    try {
+        console.log('🎓 EduAssist Background Service Worker Started');
 
-// Extension installation and updates
-chrome.runtime.onInstalled.addListener((details) => {
-    console.log('📦 EduAssist installed/updated:', details.reason);
-    
-    if (details.reason === 'install') {
-        // First installation
-        handleFirstInstall();
-    } else if (details.reason === 'update') {
-        // Extension updated
-        handleUpdate(details.previousVersion);
-    }
-});
+        // Extension installation and updates
+        chrome.runtime.onInstalled.addListener(async (details) => {
+            try {
+                console.log('📦 EduAssist installed/updated:', details.reason);
+                
+                if (details.reason === 'install') {
+                    // First installation
+                    await handleFirstInstall();
+                } else if (details.reason === 'update') {
+                    // Extension updated
+                    await handleUpdate(details.previousVersion);
+                }
+            } catch (error) {
+                console.error('❌ Error in onInstalled listener:', error);
+            }
+        });
 
 async function handleFirstInstall() {
     console.log('🎉 First installation of EduAssist');
     
-    // Set default settings
-    const defaultSettings = {
-        'auto-detect': true,
-        'notifications': true,
-        'dark-mode': false,
-        'auto-backup': true,
-        'data-sync': false,
-        'first-run': true,
-        'install-date': new Date().toISOString()
-    };
-    
-    await chrome.storage.sync.set(defaultSettings);
-    
-    // Initialize local storage
-    await chrome.storage.local.set({
-        'students-data': [],
-        'teachers-data': [],
-        'reports-cache': {},
-        'last-backup': null
-    });
-    
-    // Show welcome page (like the original did)
-    chrome.tabs.create({
-        url: chrome.runtime.getURL('src/welcome/welcome.html')
-    });
+    try {
+        // Set default settings
+        const defaultSettings = {
+            'auto-detect': true,
+            'notifications': true,
+            'dark-mode': false,
+            'auto-backup': true,
+            'data-sync': false,
+            'first-run': true,
+            'install-date': new Date().toISOString()
+        };
+        
+        await chrome.storage.sync.set(defaultSettings);
+        
+        // Initialize local storage
+        await chrome.storage.local.set({
+            'students-data': [],
+            'teachers-data': [],
+            'reports-cache': {},
+            'last-backup': null
+        });
+        
+        // Show popup instead of non-existent welcome page
+        try {
+            await chrome.action.openPopup();
+        } catch (error) {
+            console.log('Could not open popup on first install:', error.message);
+        }
+        
+        console.log('✅ First installation completed successfully');
+    } catch (error) {
+        console.error('❌ Error during first installation:', error);
+    }
 }
 
 async function handleUpdate(previousVersion) {
-    console.log(`🔄 Updated from version ${previousVersion}`);
-    
-    // Handle any migration logic here
-    // For now, just log the update
-    await chrome.storage.local.set({
-        'last-update': new Date().toISOString(),
-        'previous-version': previousVersion
-    });
+    try {
+        console.log(`🔄 Updated from version ${previousVersion}`);
+        
+        // Handle any migration logic here
+        // For now, just log the update
+        await chrome.storage.local.set({
+            'last-update': new Date().toISOString(),
+            'previous-version': previousVersion
+        });
+        
+        console.log('✅ Update completed successfully');
+    } catch (error) {
+        console.error('❌ Error during update:', error);
+    }
 }
 
 // Handle extension startup
 chrome.runtime.onStartup.addListener(() => {
     console.log('🚀 EduAssist extension started');
-    performStartupTasks();
+    performStartupTasks().catch(error => {
+        console.error('❌ Error during startup tasks:', error);
+    });
 });
 
 async function performStartupTasks() {
-    // Check for auto-backup
-    const settings = await chrome.storage.sync.get(['auto-backup']);
-    if (settings['auto-backup']) {
-        scheduleAutoBackup();
+    try {
+        // Check for auto-backup
+        const settings = await chrome.storage.sync.get(['auto-backup']);
+        if (settings['auto-backup']) {
+            scheduleAutoBackup();
+        }
+        
+        // Clean old data if needed
+        await cleanOldData();
+        
+        console.log('✅ Startup tasks completed successfully');
+    } catch (error) {
+        console.error('❌ Error in startup tasks:', error);
     }
-    
-    // Clean old data if needed
-    cleanOldData();
 }
 
 // Message handling for communication with content scripts
@@ -283,18 +312,41 @@ async function updateStatistics(platform, dataType, count) {
 
 function scheduleAutoBackup() {
     // Schedule auto backup every 24 hours
-    chrome.alarms.create('auto-backup', {
-        delayInMinutes: 1440, // 24 hours
-        periodInMinutes: 1440
-    });
+    try {
+        if (chrome.alarms && typeof chrome.alarms.create === 'function') {
+            chrome.alarms.create('auto-backup', {
+                delayInMinutes: 1440, // 24 hours
+                periodInMinutes: 1440
+            });
+            console.log('⏰ Auto backup scheduled');
+        } else {
+            console.warn('⚠️ Chrome alarms API not available - auto backup disabled');
+        }
+    } catch (error) {
+        console.warn('⚠️ Error scheduling auto backup:', error.message);
+    }
 }
 
-chrome.alarms.onAlarm.addListener((alarm) => {
-    if (alarm.name === 'auto-backup') {
-        console.log('⏰ Performing scheduled backup...');
-        performAutoBackup();
+// Check if alarms API is available before using it
+function setupAlarmsListener() {
+    try {
+        if (chrome.alarms && typeof chrome.alarms.onAlarm?.addListener === 'function') {
+            chrome.alarms.onAlarm.addListener((alarm) => {
+                if (alarm.name === 'auto-backup') {
+                    console.log('⏰ Performing scheduled backup...');
+                    performAutoBackup();
+                }
+            });
+        } else {
+            console.warn('⚠️ Chrome alarms API not available');
+        }
+    } catch (error) {
+        console.warn('⚠️ Error setting up alarms listener:', error.message);
     }
-});
+}
+
+// Set up alarms listener safely
+setupAlarmsListener();
 
 async function performAutoBackup() {
     try {
@@ -377,30 +429,77 @@ async function cleanOldData() {
 }
 
 // Context menu setup (optional)
-chrome.runtime.onInstalled.addListener(() => {
-    chrome.contextMenus.create({
-        id: 'eduassist-open',
-        title: 'فتح EduAssist',
-        contexts: ['page'],
-        documentUrlPatterns: [
-            'https://*.madrasati.sa/*',
-            'https://*.moe.gov.sa/*'
-        ]
-    });
-});
-
-chrome.contextMenus.onClicked.addListener((info, tab) => {
-    if (info.menuItemId === 'eduassist-open') {
-        // Inject and show interface
-        chrome.scripting.executeScript({
-            target: { tabId: tab.id },
-            func: () => {
-                if (window.EduAssist) {
-                    window.EduAssist.showInterface();
-                }
-            }
-        });
+function setupContextMenus() {
+    try {
+        if (chrome.contextMenus && typeof chrome.contextMenus.create === 'function') {
+            chrome.contextMenus.create({
+                id: 'eduassist-open',
+                title: 'فتح EduAssist',
+                contexts: ['page'],
+                documentUrlPatterns: [
+                    'https://*.madrasati.sa/*',
+                    'https://*.moe.gov.sa/*'
+                ]
+            });
+            console.log('✅ Context menu created');
+        } else {
+            console.warn('⚠️ Chrome contextMenus API not available');
+        }
+    } catch (error) {
+        console.warn('⚠️ Error creating context menu:', error.message);
     }
+}
+
+function setupContextMenuListener() {
+    try {
+        if (chrome.contextMenus && typeof chrome.contextMenus.onClicked?.addListener === 'function') {
+            chrome.contextMenus.onClicked.addListener((info, tab) => {
+                if (info.menuItemId === 'eduassist-open') {
+                    // Inject and show interface
+                    if (chrome.scripting && typeof chrome.scripting.executeScript === 'function') {
+                        chrome.scripting.executeScript({
+                            target: { tabId: tab.id },
+                            func: () => {
+                                if (window.EduAssist) {
+                                    window.EduAssist.showInterface();
+                                }
+                            }
+                        }).catch(error => {
+                            console.warn('Error executing script:', error.message);
+                        });
+                    }
+                }
+            });
+        } else {
+            console.warn('⚠️ Chrome contextMenus onClicked API not available');
+        }
+    } catch (error) {
+        console.warn('⚠️ Error setting up context menu listener:', error.message);
+    }
+}
+
+chrome.runtime.onInstalled.addListener(() => {
+    setupContextMenus();
 });
 
-console.log('✅ EduAssist Background Service Worker Ready');
+        // Set up context menu listener safely
+        setupContextMenuListener();
+
+        console.log('✅ EduAssist Background Service Worker Ready');
+        
+    } catch (error) {
+        console.error('❌ Critical error in background service worker:', error);
+        // Try to log to storage for debugging
+        try {
+            chrome.storage.local.set({
+                'last-error': {
+                    message: error.message,
+                    stack: error.stack,
+                    timestamp: new Date().toISOString()
+                }
+            });
+        } catch (storageError) {
+            console.error('Could not save error to storage:', storageError);
+        }
+    }
+})();
