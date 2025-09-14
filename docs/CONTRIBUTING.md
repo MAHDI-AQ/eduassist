@@ -222,7 +222,7 @@ Contributors will be recognized:
 
 ## 📄 License
 
-By contributing to EduAssist, you agree that your contributions will be licensed under the MIT License.
+By contributing to EduAssist, you agree that your contributions will be licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
 
 ---
 

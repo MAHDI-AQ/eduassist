@@ -180,7 +180,7 @@ Education
 - Maintain professional standards
 
 #### Open Source Compliance
-- Maintain MIT License terms
+- Maintain CC BY-NC-SA 4.0 License terms
 - Ensure all dependencies are compatible
 - Keep source code publicly available
 - Follow open source best practices
