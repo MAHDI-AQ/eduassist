@@ -6,8 +6,10 @@
 
 **أداة مجانية لتصدير البيانات التعليمية**
 
-[![Chrome Web Store](https://img.shields.io/badge/Chrome-Extension-brightgreen?style=flat-square&logo=google-chrome)](https://chrome.google.com/webstore)
-[![GitHub license](https://img.shields.io/github/license/MAHDI-AQ/eduassist?style=flat-square)](LICENSE)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome-Extension-bright### 📄 الترخيص
+
+هذا المشروع مرخص تحت [رخصة <span dir="ltr">CC BY-NC-SA 4.0</span>](LICENSE) - مشاع إبداعي غير تجاري. يمكنك استخدام وتطوير المشروع بحرية، لكن لا يُسمح بالاستخدام التجاري.en?style=flat-square&logo=google-chrome)](https://chrome.google.com/webstore)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg?style=flat-square)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![GitHub stars](https://img.shields.io/github/stars/MAHDI-AQ/eduassist?style=flat-square)](https://github.com/MAHDI-AQ/eduassist/stargazers)
 [![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-red?style=flat-square)](https://github.com/MAHDI-AQ/eduassist)
 
@@ -348,13 +350,19 @@ For contribution details, see [Contributing Guide](docs/CONTRIBUTING.md).
 - **Primary Language:** JavaScript (ES6+)
 - **Framework:** Chrome Extension Manifest V3
 - **Requirements:** Chrome 88+ or Edge 88+
-- **License:** MIT
+- **License:** CC BY-NC-SA 4.0
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0) - see the [LICENSE](LICENSE) file for details.
+
+**Key Points:**
+- ✅ Free to use, modify, and share
+- ❌ Commercial use prohibited
+- 🔄 Share derivatives under same license
+- 📝 Attribution required
 
 ## 🔗 Links
 
