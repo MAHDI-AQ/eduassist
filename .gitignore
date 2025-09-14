@@ -15,9 +15,14 @@ Thumbs.db
 *~
 
 # Build and package files
+build/
 *.zip
 *.crx
 *.pem
+eduassist-*.zip
+
+# Temporary files created during build
+temp/
 dist/
 build/
 

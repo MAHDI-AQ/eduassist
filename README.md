@@ -73,120 +73,37 @@
 <li>ستظهر أيقونة الامتداد في شريط الأدوات</li>
 </ol>
 
-#### الطريقة الثانية: التثبيت المطور (حالياً)
+#### الطريقة الثانية: التثبيت اليدوي (حالياً)
 <ol dir="rtl" style="text-align: right;">
 <li>حمّل الكود من GitHub:</li>
 </ol>
 
 ```bash
 git clone https://github.com/MAHDI-AQ/eduassist.git
+cd eduassist
 ```
 
 <ol dir="rtl" style="text-align: right;" start="2">
+<li>قم ببناء الإضافة:</li>
+</ol>
+
+```bash
+# Windows
+.\build.bat
+# أو
+.\scripts\build.ps1
+```
+
+<ol dir="rtl" style="text-align: right;" start="3">
+<li>استخرج ملف eduassist-v1.0.0.zip</li>
 <li>افتح Chrome واذهب إلى: <code>chrome://extensions/</code></li>
 <li>فعّل "Developer mode"</li>
 <li>اضغط "Load unpacked"</li>
-<li>اختر مجلد المشروع</li>
+<li>اختر المجلد المستخرج من الـ ZIP</li>
 </ol>
 
 </div>
 
-### 📱 دليل التثبيت للمتصفحات المختلفة
-
-<details>
-<summary><strong>🌐 Google Chrome</strong></summary>
-
-<div dir="rtl" style="text-align: right;">
-<p><strong>العربية:</strong></p>
-<ol dir="rtl" style="text-align: right;">
-<li>افتح متصفح Chrome</li>
-<li>اذهب إلى القائمة (ثلاث نقاط) ← المزيد من الأدوات ← الإضافات</li>
-<li>فعّل "Developer mode" في الزاوية اليمنى العلوية</li>
-<li>اضغط "Load unpacked"</li>
-<li>اختر مجلد EduAssist</li>
-<li>ستظهر الإضافة في قائمة الإضافات</li>
-</ol>
-</div>
-
-**English:**
-1. Open Chrome browser
-2. Go to Menu (three dots) > More tools > Extensions
-3. Enable "Developer mode" in the top right corner
-4. Click "Load unpacked"
-5. Select the EduAssist folder
-6. The extension will appear in your extensions list
-
-</details>
-
-<details>
-<summary><strong>⚡ Microsoft Edge</strong></summary>
-
-**العربية:**
-1. افتح متصفح Edge
-2. اذهب إلى القائمة (ثلاث نقاط) ← الإضافات
-3. فعّل "Developer mode" في الزاوية اليسرى السفلية
-4. اضغط "Load unpacked"
-5. اختر مجلد EduAssist
-6. تعمل تماماً مثل Chrome
-
-**English:**
-1. Open Edge browser
-2. Go to Menu (three dots) > Extensions
-3. Enable "Developer mode" in the bottom left corner
-4. Click "Load unpacked"
-5. Select the EduAssist folder
-6. Works exactly like Chrome
-
-</details>
-
-<details>
-<summary><strong>🎭 Opera</strong></summary>
-
-**العربية:**
-1. افتح متصفح Opera
-2. اذهب إلى القائمة ← الإضافات ← إدارة الإضافات
-3. فعّل "Developer mode" في الزاوية اليمنى العلوية
-4. اضغط "Load unpacked"
-5. اختر مجلد EduAssist
-
-**English:**
-1. Open Opera browser
-2. Go to Menu > Extensions > Manage Extensions
-3. Enable "Developer mode" in the top right corner
-4. Click "Load unpacked"
-5. Select the EduAssist folder
-
-</details>
-
-<details>
-<summary><strong>🦁 Brave</strong></summary>
-
-**العربية:**
-1. افتح متصفح Brave
-2. اذهب إلى القائمة ← الإضافات
-3. فعّل "Developer mode"
-4. اضغط "Load unpacked"
-5. اختر مجلد EduAssist
-
-**English:**
-1. Open Brave browser
-2. Go to Menu > Extensions
-3. Enable "Developer mode"
-4. Click "Load unpacked"
-5. Select the EduAssist folder
-
-</details>
-
-<details>
-<summary><strong>🦊 Mozilla Firefox</strong></summary>
-
-**العربية:**
-> **ملاحظة:** Firefox يتطلب تحويل الإضافة إلى Manifest V2. حالياً الإضافة مخصصة للمتصفحات المبنية على Chromium فقط.
-
-**English:**
-> **Note:** Firefox requires converting the extension to Manifest V2. Currently, the extension is designed for Chromium-based browsers only.
-
-</details>
 ### 🔧 كيفية الاستخدام
 
 <div dir="rtl" style="text-align: right;">
@@ -360,15 +277,21 @@ git clone https://github.com/MAHDI-AQ/eduassist.git
 4. Accept required permissions
 5. Extension icon will appear in toolbar
 
-#### Method 2: Developer Installation (Currently)
+#### Method 2: Manual Installation (Currently)
 1. Download code from GitHub:
    ```bash
    git clone https://github.com/MAHDI-AQ/eduassist.git
+   cd eduassist
    ```
-2. Open Chrome and go to `chrome://extensions/`
-3. Enable "Developer mode"
-4. Click "Load unpacked"
-5. Select project folder
+2. Build the extension:
+   ```bash
+   .\build.bat
+   ```
+3. Extract the `eduassist-v1.0.0.zip` file
+4. Open Chrome and go to `chrome://extensions/`
+5. Enable "Developer mode"
+6. Click "Load unpacked"
+7. Select the extracted folder
 
 ### 🔧 How to Use
 
