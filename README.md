@@ -1,10 +1,10 @@
-# EduAssist - المساعد التعليمي 🎓
+# <bdi>EduAssist</bdi> - المساعد التعليمي 🎓
 
 <div align="center">
 
 ![EduAssist Logo](assets/icons/icon128.svg)
 
-**مساعد تعليمي مجاني ومفتوح المصدر للمملكة العربية السعودية**
+**أداة مجانية لتصدير البيانات التعليمية**
 
 [![Chrome Web Store](https://img.shields.io/badge/Chrome-Extension-brightgreen?style=flat-square&logo=google-chrome)](https://chrome.google.com/webstore)
 [![GitHub license](https://img.shields.io/github/license/MAHDI-AQ/eduassist?style=flat-square)](LICENSE)
@@ -23,14 +23,14 @@
 
 ### 📖 نبذة عن المشروع
 
-**<bdi>EduAssist</bdi>** هو امتداد مجاني ومفتوح المصدر لمتصفح <span dir="ltr">Chrome</span>، مصمم خصيصاً للكادر الإداري والتعليمي في المملكة العربية السعودية. يهدف المشروع إلى تسهيل المهام اليومية وتوفير أدوات فعالة لإدارة البيانات التعليمية بطريقة آمنة ومحمية.
+**<bdi>EduAssist</bdi>** أداة مجانية لتصدير البيانات من منصة مدرستي ونظام نور.
 
 ### ✨ المزايا الرئيسية
 
 - **🆓 مجاني بالكامل** - لا توجد رسوم أو اشتراكات
 - **🔓 مفتوح المصدر** - شفافية كاملة في الكود
 - **🔒 آمن ومحمي** - جميع البيانات تُعالج محلياً في المتصفح
-- **🇸🇦 مصمم للسعودية** - دعم كامل للغة العربية والمنصات المحلية
+- **📚 يدعم منصتي مدرستي ونور** - متوافق مع المنصات التعليمية الرئيسية
 - **⚡ سريع وفعال** - أداء محسّن وتجربة مستخدم سلسة
 - **🤝 مجتمعي** - تطوير تشاركي من المجتمع التعليمي
 
@@ -258,14 +258,14 @@
 
 ### 📖 About the Project
 
-**EduAssist** is a free and open-source Chrome extension designed specifically for administrative and educational staff in Saudi Arabia. The project aims to facilitate daily tasks and provide effective tools for managing educational data in a safe and secure manner.
+**EduAssist** is a free tool for exporting data from Madrasati and Noor educational platforms.
 
 ### ✨ Key Features
 
 - **🆓 Completely Free** - No fees or subscriptions
 - **🔓 Open Source** - Complete code transparency
 - **🔒 Safe & Secure** - All data processed locally in your browser
-- **🇸🇦 Saudi-Focused** - Full Arabic language and local platform support
+- **📚 Supports Madrasati & Noor** - Compatible with main educational platforms
 - **⚡ Fast & Efficient** - Optimized performance and smooth user experience
 - **🤝 Community-Driven** - Collaborative development by the educational community
 

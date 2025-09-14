@@ -2,8 +2,8 @@
   "manifest_version": 3,
   "name": "EduAssist - المساعد التعليمي",
   "name_en": "EduAssist - Educational Assistant", 
-  "description": "مساعد تعليمي مجاني ومفتوح المصدر للكادر الإداري والتعليمي بالمملكة العربية السعودية",
-  "description_en": "Free and open-source educational assistant for administrative and teaching staff in Saudi Arabia",
+  "description": "أداة مجانية لتصدير البيانات من منصة مدرستي ونظام نور",
+  "description_en": "Free tool for exporting data from Madrasati and Noor educational platforms",
   "version": "1.0.0",
   "icons": {
     "16": "assets/icons/icon16.svg",
