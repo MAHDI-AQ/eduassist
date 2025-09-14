@@ -6,9 +6,7 @@
 
 **أداة مجانية لتصدير البيانات التعليمية**
 
-[![Chrome Web Store](https://img.shields.io/badge/Chrome-Extension-bright### 📄 الترخيص
-
-هذا المشروع مرخص تحت [رخصة <span dir="ltr">CC BY-NC-SA 4.0</span>](LICENSE) - مشاع إبداعي غير تجاري. يمكنك استخدام وتطوير المشروع بحرية، لكن لا يُسمح بالاستخدام التجاري.en?style=flat-square&logo=google-chrome)](https://chrome.google.com/webstore)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome-Extension-brightgreen?style=flat-square&logo=google-chrome)](https://chrome.google.com/webstore)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg?style=flat-square)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![GitHub stars](https://img.shields.io/github/stars/MAHDI-AQ/eduassist?style=flat-square)](https://github.com/MAHDI-AQ/eduassist/stargazers)
 [![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-red?style=flat-square)](https://github.com/MAHDI-AQ/eduassist)
@@ -237,9 +235,9 @@
 
 </details>
 
-### � الترخيص
+### 📄 الترخيص
 
-هذا المشروع مرخص تحت [رخصة <span dir="ltr">MIT</span>](LICENSE) - راجع ملف الترخيص لمزيد من التفاصيل.
+هذا المشروع مرخص تحت [رخصة <span dir="ltr">CC BY-NC-SA 4.0</span>](LICENSE) - مشاع إبداعي غير تجاري. يمكنك استخدام وتطوير المشروع بحرية، لكن لا يُسمح بالاستخدام التجاري.
 
 ---
 
