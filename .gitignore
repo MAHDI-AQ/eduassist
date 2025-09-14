@@ -85,3 +85,5 @@ credentials/
 # Temporary Chrome extension files
 _locales/
 chrome-extension://*/
+
+app_context
