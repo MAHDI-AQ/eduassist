@@ -29,8 +29,6 @@
         "https://*.noor.moe.gov.sa/*"
       ],
       "js": [
-        "src/utils/jquery.min.js",
-        "src/utils/helpers.js",
         "src/content/content-main.js"
       ],
       "css": [
@@ -42,7 +40,6 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "src/features/*.js",
         "assets/css/*.css",
         "assets/icons/*.png"
       ],

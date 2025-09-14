@@ -1,31 +1,58 @@
-# 📁 Scripts
+# Development Build Scripts
 
-Simple build script for EduAssist extension.
+This folder contains scripts for building and deploying the EduAssist extension.
 
-## 🚀 Quick Build
+## Scripts
 
-```bash
-# Build extension ZIP file
-.\build.ps1
+### `dev-build.ps1`
+Development build script that:
+- Cleans and rebuilds the extension
+- Copies files directly to development folder
+- Optimized for rapid development/testing cycle
 
-# Or use batch file (Windows)
-..\build.bat
+**Usage:**
+```powershell
+# Use default path (C:\Users\mahdi\Desktop\eduassist-dev)
+.\scripts\dev-build.ps1
+
+# Use custom path
+.\scripts\dev-build.ps1 -DevPath "C:\path\to\your\folder"
 ```
 
-## � What it does
+### `build.ps1`
+Production build script that:
+- Creates packaged .zip file
+- Includes version info and installation instructions
+- Used for distribution
 
-1. Copies `manifest.json`, `src/`, and `assets/` to a clean build
-2. Creates `eduassist-v1.0.0.zip` 
-3. Shows installation instructions
-4. Opens the folder with the ZIP file
+**Usage:**
+```powershell
+.\scripts\build.ps1
+```
 
-## 🔧 Installation
+## Development Workflow
 
-1. Run the build script
-2. Extract the generated ZIP file
-3. Open Chrome → `chrome://extensions/`
-4. Enable "Developer mode"
-5. Click "Load unpacked"
-6. Select the extracted folder
+1. **Initial Setup:**
+   ```powershell
+   .\scripts\dev-build.ps1
+   ```
+   - Load the extension in Chrome from `C:\Users\mahdi\Desktop\eduassist-dev`
+
+2. **Development Cycle:**
+   - Make changes to source files
+   - Run `.\dev-build.bat` (double-click or from terminal)
+   - Reload extension in Chrome (click 🔄 button in chrome://extensions/)
+   - Test changes
+
+3. **Quick Access:**
+   - Double-click `dev-build.bat` in the root folder
+   - Or run from PowerShell: `.\scripts\dev-build.ps1`
+
+## Notes
+
+- Development folder is automatically cleaned on each build
+- Extension must be loaded as "unpacked" in Chrome developer mode
+- Changes take effect immediately after reload in Chrome
+- No need to manually extract or copy files
 
 That's it! 🎉

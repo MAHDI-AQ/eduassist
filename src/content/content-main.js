@@ -1,360 +1,585 @@
-/* EduAssist - Free Educational Assistant Extension
+/* EduAssist - Main Entry Point
  * Copyright 2025 - Open Source Project
- * Made with ❤️ for Saudi Educational Community
- * Designed for Saudi Educational Platforms
+ * Bundled version for Chrome Extension content script compatibility
  */
 
-// Extension initialization
-console.log('🎓 EduAssist Extension Loaded - Free Educational Assistant');
+console.log('🎓 EduAssist Extension Loading...');
 
-// Core functionality controller
-class EduAssist {
-    constructor() {
-        this.isInitialized = false;
-        this.currentPlatform = this.detectPlatform();
-        this.features = {};
-        this.init();
+// === DEFINE ALL CLASSES FIRST ===
+// Instead of dynamic loading, let's embed all classes directly in this file
+// This ensures they run in the same context and avoids all module loading issues
+
+// === UTILITY CLASSES ===
+window.CSSLoader = class CSSLoader {
+    static loadContentStyles() {
+        // Skip CSS loading for now to avoid issues
+        console.log('🎨 CSS loading skipped');
     }
+};
 
-    init() {
-        if (this.isInitialized) return;
-        
-        console.log(`🎯 EduAssist: Initializing on ${this.currentPlatform}`);
-        this.loadCSS();
-        this.injectMainInterface();
-        this.initializePlatformFeatures();
-        this.isInitialized = true;
-        
-        // Show welcome message (like they did, but better)
-        this.showWelcome();
-    }
-
-    detectPlatform() {
+// === PLATFORM DETECTION ===
+window.PlatformDetector = class PlatformDetector {
+    static detect() {
         const hostname = window.location.hostname;
-        if (hostname.includes('madrasati.sa')) return 'madrasati';
-        if (hostname.includes('moe.gov.sa') || hostname.includes('noor')) return 'noor';
+        
+        if (hostname.includes('madrasati.sa')) {
+            return 'madrasati';
+        }
+        
+        if (hostname.includes('moe.gov.sa') || hostname.includes('noor')) {
+            return 'noor';
+        }
+        
         return 'unknown';
     }
-
-    loadCSS() {
-        const cssFile = chrome.runtime.getURL('assets/css/content-styles.css');
-        if (!document.querySelector(`link[href="${cssFile}"]`)) {
-            const link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = cssFile;
-            document.head.appendChild(link);
-        }
+    
+    static getSupportedPlatforms() {
+        return ['madrasati', 'noor'];
     }
-
-    injectMainInterface() {
-        // Remove any existing interface
-        const existing = document.getElementById('eduassist-interface');
-        if (existing) existing.remove();
-
-        // Create main interface container (similar to their approach but cleaner)
-        const interfaceHTML = `
-            <div id="eduassist-interface" style="display: none;">
-                <div class="eduassist-modal">
-                    <div class="eduassist-header">
-                        <h2>🎓 EduAssist - المساعد التعليمي المجاني</h2>
-                        <button class="eduassist-close" onclick="EduAssist.hideInterface()">✕</button>
-                    </div>
-                    <div class="eduassist-content">
-                        <div id="eduassist-loading" class="text-center">
-                            <div class="spinner"></div>
-                            <p>جاري تحميل الأدوات التعليمية...</p>
-                        </div>
-                        <div id="eduassist-features" style="display: none;">
-                            ${this.generateFeaturesHTML()}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-
-        document.body.insertAdjacentHTML('beforeend', interfaceHTML);
+    
+    static isPlatformSupported(platform = null) {
+        const currentPlatform = platform || this.detect();
+        return this.getSupportedPlatforms().includes(currentPlatform);
     }
-
-    generateFeaturesHTML() {
-        const features = this.getPlatformFeatures();
-        let html = '<div class="eduassist-tabs">';
+    
+    static getPlatformName(platform = null) {
+        const currentPlatform = platform || this.detect();
         
-        // Generate tabs for different feature categories
-        const categories = ['students', 'teachers', 'reports', 'tools'];
-        categories.forEach(category => {
-            html += `
-                <button class="eduassist-tab" data-category="${category}">
-                    ${this.getCategoryTitle(category)}
-                </button>
-            `;
-        });
-        
-        html += '</div><div class="eduassist-features-grid">';
-        
-        // Generate feature buttons
-        features.forEach(feature => {
-            html += `
-                <button class="eduassist-feature-btn" data-feature="${feature.id}">
-                    <i class="${feature.icon}"></i>
-                    <span class="feature-title">${feature.title}</span>
-                    <small class="feature-desc">${feature.description}</small>
-                </button>
-            `;
-        });
-        
-        html += '</div>';
-        return html;
-    }
-
-    getPlatformFeatures() {
-        // Similar features to the original but organized better
-        const commonFeatures = [
-            {
-                id: 'attendance-tracker',
-                title: 'تتبع الحضور',
-                description: 'رصد حضور وغياب الطلاب',
-                icon: 'fas fa-check-square',
-                category: 'students'
-            },
-            {
-                id: 'grade-reports',
-                title: 'تقارير الدرجات',
-                description: 'إنشاء وتصدير تقارير الدرجات',
-                icon: 'fas fa-chart-bar',
-                category: 'reports'
-            },
-            {
-                id: 'student-data-export',
-                title: 'تصدير بيانات الطلاب',
-                description: 'تصدير بيانات الطلاب إلى Excel',
-                icon: 'fas fa-download',
-                category: 'tools'
-            },
-            {
-                id: 'lesson-tracker',
-                title: 'متابعة الدروس',
-                description: 'تتبع تحضير الدروس للمعلمين',
-                icon: 'fas fa-book',
-                category: 'teachers'
-            },
-            {
-                id: 'bulk-operations',
-                title: 'العمليات المجمعة',
-                description: 'تنفيذ عمليات متعددة على الطلاب',
-                icon: 'fas fa-users',
-                category: 'tools'
-            }
-        ];
-
-        // Add platform-specific features
-        if (this.currentPlatform === 'madrasati') {
-            commonFeatures.push({
-                id: 'madrasati-import',
-                title: 'استيراد من مدرستي',
-                description: 'استيراد بيانات الطلاب من منصة مدرستي',
-                icon: 'fas fa-upload',
-                category: 'tools'
-            });
-        }
-
-        if (this.currentPlatform === 'noor') {
-            commonFeatures.push({
-                id: 'noor-sync',
-                title: 'مزامنة نور',
-                description: 'مزامنة البيانات مع نظام نور',
-                icon: 'fas fa-sync',
-                category: 'tools'
-            });
-        }
-
-        return commonFeatures;
-    }
-
-    getCategoryTitle(category) {
-        const titles = {
-            'students': '👥 الطلاب',
-            'teachers': '👨‍🏫 المعلمين',
-            'reports': '📊 التقارير',
-            'tools': '🛠️ الأدوات'
+        const names = {
+            'madrasati': 'منصة مدرستي',
+            'noor': 'نظام نور',
+            'unknown': 'منصة غير مدعومة'
         };
-        return titles[category] || category;
+        
+        return names[currentPlatform] || names.unknown;
     }
-
-    initializePlatformFeatures() {
-        // Initialize features based on current platform
-        this.loadPlatformScript();
-        this.bindEventListeners();
-    }
-
-    loadPlatformScript() {
-        // Load platform-specific functionality (like they did with remote scripts)
-        const scriptUrl = chrome.runtime.getURL(`src/features/${this.currentPlatform}.js`);
-        const script = document.createElement('script');
-        script.src = scriptUrl;
-        script.onload = () => {
-            console.log(`✅ ${this.currentPlatform} features loaded`);
-            this.hideLoading();
+    
+    static getPlatformIcon(platform = null) {
+        const currentPlatform = platform || this.detect();
+        
+        const icons = {
+            'madrasati': 'fa-school',
+            'noor': 'fa-user-graduate',
+            'unknown': 'fa-question-circle'
         };
-        document.head.appendChild(script);
-    }
-
-    bindEventListeners() {
-        // Bind feature button clicks
-        document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('eduassist-feature-btn') || 
-                e.target.closest('.eduassist-feature-btn')) {
-                const btn = e.target.closest('.eduassist-feature-btn');
-                const featureId = btn.dataset.feature;
-                this.executeFeature(featureId);
-            }
-        });
-
-        // Tab switching
-        document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('eduassist-tab')) {
-                this.switchTab(e.target.dataset.category);
-            }
-        });
-    }
-
-    executeFeature(featureId) {
-        console.log(`🚀 Executing feature: ${featureId}`);
         
-        // Show loading state
-        this.showFeatureLoading(featureId);
+        return icons[currentPlatform] || icons.unknown;
+    }
+};
+
+// === DATA EXTRACTION CLASSES ===
+window.BaseDataExtractor = class BaseDataExtractor {
+    constructor() {
+        this.platform = window.PlatformDetector.detect();
+    }
+    
+    async extract() {
+        throw new Error('Extract method must be implemented by subclass');
+    }
+    
+    waitForElement(selector, timeout = 5000) {
+        return new Promise((resolve, reject) => {
+            const element = document.querySelector(selector);
+            if (element) {
+                resolve(element);
+                return;
+            }
+            
+            const observer = new MutationObserver((mutations) => {
+                const element = document.querySelector(selector);
+                if (element) {
+                    observer.disconnect();
+                    resolve(element);
+                }
+            });
+            
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+            
+            setTimeout(() => {
+                observer.disconnect();
+                reject(new Error(`Element ${selector} not found within ${timeout}ms`));
+            }, timeout);
+        });
+    }
+};
+
+window.StudentDataExtractor = class StudentDataExtractor extends window.BaseDataExtractor {
+    async extract() {
+        console.log('🔍 Extracting student data...');
         
-        // Execute feature based on ID
-        switch(featureId) {
-            case 'attendance-tracker':
-                this.startAttendanceTracker();
-                break;
-            case 'grade-reports':
-                this.generateGradeReports();
-                break;
-            case 'student-data-export':
-                this.exportStudentData();
-                break;
-            case 'lesson-tracker':
-                this.trackLessons();
-                break;
-            case 'bulk-operations':
-                this.showBulkOperations();
-                break;
-            default:
-                console.log(`Feature ${featureId} not implemented yet`);
+        const data = {};
+        
+        // Try to extract basic student information from page
+        try {
+            // Look for common student info patterns
+            const nameElements = document.querySelectorAll('[class*="name"], [id*="name"], [class*="student"], [id*="student"]');
+            const idElements = document.querySelectorAll('[class*="id"], [id*="id"], [class*="number"], [id*="number"]');
+            
+            nameElements.forEach((el, index) => {
+                if (el.textContent.trim()) {
+                    data[`Name_${index}`] = el.textContent.trim();
+                }
+            });
+            
+            idElements.forEach((el, index) => {
+                if (el.textContent.trim() && /\d/.test(el.textContent)) {
+                    data[`ID_${index}`] = el.textContent.trim();
+                }
+            });
+            
+            data.Platform = this.platform;
+            data.URL = window.location.href;
+            data.Timestamp = new Date().toISOString();
+            
+        } catch (error) {
+            console.error('Error extracting student data:', error);
         }
+        
+        return data;
     }
+};
 
-    // Feature implementations (stubs for now)
-    startAttendanceTracker() {
-        console.log('📝 Starting attendance tracker...');
-        // Implementation will be added in platform-specific files
+window.AttendanceDataExtractor = class AttendanceDataExtractor extends window.BaseDataExtractor {
+    async extract() {
+        console.log('📅 Extracting attendance data...');
+        
+        const data = [];
+        
+        try {
+            // Look for attendance/date patterns
+            const attendanceElements = document.querySelectorAll('[class*="attendance"], [class*="present"], [class*="absent"], [class*="date"]');
+            
+            attendanceElements.forEach((el, index) => {
+                if (el.textContent.trim()) {
+                    data.push({
+                        element: index,
+                        text: el.textContent.trim(),
+                        platform: this.platform,
+                        timestamp: new Date().toISOString()
+                    });
+                }
+            });
+            
+        } catch (error) {
+            console.error('Error extracting attendance data:', error);
+        }
+        
+        return data;
     }
+};
 
-    generateGradeReports() {
-        console.log('📊 Generating grade reports...');
-        // Implementation will be added
+// === PLATFORM CLASSES ===
+window.BasePlatform = class BasePlatform {
+    constructor(controller) {
+        this.controller = controller;
+        this.name = 'Unknown Platform';
+        this.studentExtractor = new window.StudentDataExtractor();
+        this.attendanceExtractor = new window.AttendanceDataExtractor();
     }
-
-    exportStudentData() {
-        console.log('💾 Exporting student data...');
-        // Implementation will be added
+    
+    async initialize() {
+        console.log(`� Initializing ${this.name}...`);
     }
-
-    trackLessons() {
-        console.log('📚 Tracking lessons...');
-        // Implementation will be added
+    
+    async extractStudentData() {
+        return await this.studentExtractor.extract();
     }
-
-    showBulkOperations() {
-        console.log('⚡ Showing bulk operations...');
-        // Implementation will be added
+    
+    async extractAttendance() {
+        return await this.attendanceExtractor.extract();
     }
+    
+    async extractGrades() {
+        console.log('📝 Extracting grades...');
+        return [];
+    }
+};
 
-    // UI Helper methods
-    showWelcome() {
-        // Show a subtle welcome notification
-        const welcome = document.createElement('div');
-        welcome.className = 'eduassist-welcome';
-        welcome.innerHTML = `
-            <div class="welcome-content">
-                <strong>🎓 EduAssist</strong> - المساعد التعليمي المجاني
-                <button onclick="EduAssist.showInterface()">فتح الأدوات</button>
-                <button onclick="this.parentElement.parentElement.remove()">✕</button>
-            </div>
-        `;
-        document.body.appendChild(welcome);
+window.MadrasatiPlatform = class MadrasatiPlatform extends window.BasePlatform {
+    constructor(controller) {
+        super(controller);
+        this.name = 'منصة مدرستي';
+        this.studentExtractor = new window.StudentDataExtractor();
+        this.attendanceExtractor = new window.AttendanceDataExtractor();
+    }
+    
+    async initialize() {
+        console.log('🏫 Initializing Madrasati Platform...');
+        await super.initialize();
+    }
+};
 
-        // Auto-hide after 5 seconds
+window.NoorPlatform = class NoorPlatform extends window.BasePlatform {
+    constructor(controller) {
+        super(controller);
+        this.name = 'نظام نور';
+        this.studentExtractor = new window.StudentDataExtractor();
+    }
+    
+    async initialize() {
+        console.log('🌟 Initializing Noor Platform...');
+        await super.initialize();
+    }
+};
+
+// === UI CLASSES ===
+window.NotificationManager = class NotificationManager {
+    constructor() {
+        this.notifications = [];
+    }
+    
+    show(message, type = 'info', duration = 3000) {
+        console.log(`📢 Notification [${type}]: ${message}`);
+        
+        const notification = {
+            id: Date.now(),
+            message,
+            type,
+            timestamp: new Date()
+        };
+        
+        this.notifications.push(notification);
+        
+        // Auto-remove after duration
         setTimeout(() => {
-            if (welcome.parentElement) {
-                welcome.remove();
-            }
-        }, 5000);
+            this.remove(notification.id);
+        }, duration);
+        
+        return notification.id;
     }
+    
+    remove(id) {
+        this.notifications = this.notifications.filter(n => n.id !== id);
+    }
+    
+    clear() {
+        this.notifications = [];
+    }
+};
 
+window.FloatingWidget = class FloatingWidget {
+    constructor(controller) {
+        this.controller = controller;
+        this.widget = null;
+        this.isDragging = false;
+    }
+    
+    create() {
+        console.log('🎯 Creating floating widget...');
+        
+        // Remove any existing widget
+        this.remove();
+        
+        // Create floating widget
+        this.widget = document.createElement('div');
+        this.widget.id = 'eduassist-widget';
+        this.widget.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 999999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.2s ease;
+        `;
+        
+        this.widget.innerHTML = '🎓';
+        this.widget.title = 'EduAssist - مساعد البيانات التعليمية';
+        
+        // Add click handler
+        this.widget.addEventListener('click', () => {
+            this.controller.showInterface();
+        });
+        
+        // Add hover effects
+        this.widget.addEventListener('mouseenter', () => {
+            this.widget.style.transform = 'scale(1.1)';
+        });
+        
+        this.widget.addEventListener('mouseleave', () => {
+            this.widget.style.transform = 'scale(1.0)';
+        });
+        
+        document.body.appendChild(this.widget);
+    }
+    
+    remove() {
+        const existingWidget = document.getElementById('eduassist-widget');
+        if (existingWidget) {
+            existingWidget.remove();
+        }
+    }
+    
+    show() {
+        if (this.widget) {
+            this.widget.style.display = 'flex';
+        }
+    }
+    
+    hide() {
+        if (this.widget) {
+            this.widget.style.display = 'none';
+        }
+    }
+};
+
+window.MainInterface = class MainInterface {
+    constructor(controller) {
+        this.controller = controller;
+        this.interfaceElement = null;
+    }
+    
+    inject() {
+        console.log('🖥️ Creating main interface...');
+        // For now, just log that interface would be created
+        console.log('✅ Main interface ready');
+    }
+    
+    show() {
+        console.log('📱 Showing main interface...');
+        
+        // Create a simple modal for testing
+        const modal = document.createElement('div');
+        modal.id = 'eduassist-modal';
+        modal.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        `;
+        
+        const content = document.createElement('div');
+        content.style.cssText = `
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            direction: rtl;
+            text-align: center;
+        `;
+        
+        content.innerHTML = `
+            <h2>🎓 EduAssist</h2>
+            <p>مرحباً بك في مساعد استخراج البيانات التعليمية</p>
+            <p><strong>المنصة المكتشفة:</strong> ${window.PlatformDetector.getPlatformName()}</p>
+            <div style="margin: 20px 0;">
+                <button id="extract-student-btn" style="margin: 5px; padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">استخراج بيانات الطالب</button>
+                <button id="extract-attendance-btn" style="margin: 5px; padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">استخراج سجل الحضور</button>
+            </div>
+            <button id="close-modal-btn" style="margin: 5px; padding: 10px 20px; background: #6c757d; color: white; border: none; border-radius: 5px; cursor: pointer;">إغلاق</button>
+            <div id="results" style="margin-top: 20px; padding: 10px; background: #f8f9fa; border-radius: 5px; display: none;"></div>
+        `;
+        
+        modal.appendChild(content);
+        document.body.appendChild(modal);
+        
+        // Add event listeners
+        document.getElementById('close-modal-btn').addEventListener('click', () => {
+            modal.remove();
+        });
+        
+        document.getElementById('extract-student-btn').addEventListener('click', async () => {
+            const results = document.getElementById('results');
+            results.style.display = 'block';
+            results.innerHTML = '🔄 جاري استخراج بيانات الطالب...';
+            
+            try {
+                const data = await this.controller.extractStudentData();
+                results.innerHTML = `<pre style="text-align: left; direction: ltr;">${JSON.stringify(data, null, 2)}</pre>`;
+            } catch (error) {
+                results.innerHTML = `❌ خطأ: ${error.message}`;
+            }
+        });
+        
+        document.getElementById('extract-attendance-btn').addEventListener('click', async () => {
+            const results = document.getElementById('results');
+            results.style.display = 'block';
+            results.innerHTML = '🔄 جاري استخراج سجل الحضور...';
+            
+            try {
+                const data = await this.controller.extractAttendance();
+                results.innerHTML = `<pre style="text-align: left; direction: ltr;">${JSON.stringify(data, null, 2)}</pre>`;
+            } catch (error) {
+                results.innerHTML = `❌ خطأ: ${error.message}`;
+            }
+        });
+        
+        // Close on background click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.remove();
+            }
+        });
+    }
+};
+
+// === MAIN CONTROLLER ===
+window.EduAssistController = class EduAssistController {
+    constructor() {
+        this.isInitialized = false;
+        this.currentPlatform = window.PlatformDetector.detect();
+        this.features = {};
+        this.navigationStack = ['main'];
+        this.currentView = 'main';
+        this.lastExtractedData = null;
+        
+        // Initialize components
+        this.platformHandler = this.createPlatformHandler();
+        this.widget = new window.FloatingWidget(this);
+        this.mainInterface = new window.MainInterface(this);
+        this.notifications = new window.NotificationManager();
+        
+        this.init();
+    }
+    
+    async init() {
+        console.log(`🎯 EduAssist: Initializing on ${this.currentPlatform}`);
+        
+        // Initialize components
+        this.widget.create();
+        this.mainInterface.inject();
+        
+        if (this.platformHandler) {
+            await this.platformHandler.initialize();
+        }
+        
+        this.isInitialized = true;
+        console.log('✅ EduAssist initialized successfully!');
+    }
+    
+    createPlatformHandler() {
+        switch (this.currentPlatform) {
+            case 'madrasati':
+                return new window.MadrasatiPlatform(this);
+            case 'noor':
+                return new window.NoorPlatform(this);
+            default:
+                console.warn('⚠️ Unsupported platform:', this.currentPlatform);
+                return null;
+        }
+    }
+    
+    getCurrentPlatform() {
+        return this.platformHandler;
+    }
+    
+    checkAuthentication() {
+        // Simple check - can be enhanced later
+        return true;
+    }
+    
+    async extractStudentData() {
+        if (!this.platformHandler) {
+            throw new Error('Platform not supported');
+        }
+        return await this.platformHandler.extractStudentData();
+    }
+    
+    async extractAttendance() {
+        if (!this.platformHandler) {
+            throw new Error('Platform not supported');
+        }
+        return await this.platformHandler.extractAttendance();
+    }
+    
+    async extractGrades() {
+        if (!this.platformHandler) {
+            throw new Error('Platform not supported');
+        }
+        return await this.platformHandler.extractGrades();
+    }
+    
+    setLastExtractedData(data) {
+        this.lastExtractedData = data;
+    }
+    
+    exportData(format) {
+        if (!this.lastExtractedData) {
+            this.notifications.show('لا توجد بيانات لتصديرها', 'warning');
+            return;
+        }
+        
+        const dataStr = format === 'json' 
+            ? JSON.stringify(this.lastExtractedData, null, 2)
+            : this.convertToCSV(this.lastExtractedData);
+        
+        const blob = new Blob([dataStr], { type: format === 'json' ? 'application/json' : 'text/csv' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `eduassist-data-${Date.now()}.${format}`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        
+        this.notifications.show('تم تصدير البيانات بنجاح', 'success');
+    }
+    
+    convertToCSV(data) {
+        if (Array.isArray(data)) {
+            const headers = Object.keys(data[0] || {});
+            const csvContent = [
+                headers.join(','),
+                ...data.map(row => headers.map(header => `"${row[header] || ''}"`).join(','))
+            ].join('\n');
+            return csvContent;
+        } else {
+            const headers = ['Key', 'Value'];
+            const csvContent = [
+                headers.join(','),
+                ...Object.entries(data).map(([key, value]) => `"${key}","${value}"`)
+            ].join('\n');
+            return csvContent;
+        }
+    }
+    
     showInterface() {
-        const interface = document.getElementById('eduassist-interface');
-        if (interface) {
-            interface.style.display = 'flex';
-        }
+        this.mainInterface.show();
     }
-
-    hideInterface() {
-        const interface = document.getElementById('eduassist-interface');
-        if (interface) {
-            interface.style.display = 'none';
-        }
+    
+    getViewTitle(viewName) {
+        const titles = {
+            'main': 'الصفحة الرئيسية',
+            'student': 'بيانات الطالب',
+            'attendance': 'سجل الحضور',
+            'grades': 'الدرجات'
+        };
+        return titles[viewName] || viewName;
     }
+};
 
-    hideLoading() {
-        const loading = document.getElementById('eduassist-loading');
-        const features = document.getElementById('eduassist-features');
-        if (loading) loading.style.display = 'none';
-        if (features) features.style.display = 'block';
-    }
+console.log('✅ All classes loaded directly into window object');
 
-    showFeatureLoading(featureId) {
-        console.log(`⏳ Loading feature: ${featureId}`);
-        // Show loading state for specific feature
-    }
-
-    switchTab(category) {
-        // Remove active class from all tabs
-        document.querySelectorAll('.eduassist-tab').forEach(tab => {
-            tab.classList.remove('active');
-        });
-        
-        // Add active class to clicked tab
-        document.querySelector(`[data-category="${category}"]`).classList.add('active');
-        
-        // Show/hide features based on category
-        document.querySelectorAll('.eduassist-feature-btn').forEach(btn => {
-            const feature = this.getPlatformFeatures().find(f => f.id === btn.dataset.feature);
-            if (feature && feature.category === category) {
-                btn.style.display = 'block';
-            } else {
-                btn.style.display = 'none';
-            }
-        });
-    }
-}
-
-// Global instance (similar to how they did it)
-window.EduAssist = new EduAssist();
-
-// Storage helper functions (similar to their approach)
+// Storage helper
 window.eduAssistStorage = {
-    set: function(key, value) {
+    set: (key, value) => {
         return new Promise((resolve) => {
             chrome.storage.local.set({[key]: value}, () => {
-                console.log(`💾 Stored: ${key}`);
                 resolve();
             });
         });
     },
-    
-    get: function(key) {
+    get: (key) => {
         return new Promise((resolve) => {
             chrome.storage.local.get([key], (result) => {
                 resolve(result[key]);
@@ -363,6 +588,40 @@ window.eduAssistStorage = {
     }
 };
 
-// Expose methods globally for HTML onclick handlers
-window.EduAssist.showInterface = window.EduAssist.showInterface.bind(window.EduAssist);
-window.EduAssist.hideInterface = window.EduAssist.hideInterface.bind(window.EduAssist);
+// === INITIALIZATION CODE ===
+// Now that all classes are defined, we can safely initialize
+
+function initializeEduAssist() {
+    // Check if platform is supported first
+    const platform = window.PlatformDetector.detect();
+    if (!window.PlatformDetector.isPlatformSupported(platform)) {
+        console.log(`ℹ️ Platform '${platform}' not supported. Extension will not initialize.`);
+        return;
+    }
+    
+    // Initialize directly since all classes are embedded above
+    loadEduAssistModules();
+}
+
+function loadEduAssistModules() {
+    try {
+        console.log('🔧 Loading EduAssist modules...');
+        
+        // Initialize CSS
+        window.CSSLoader.loadContentStyles();
+        
+        // Initialize the main controller
+        window.eduAssistController = new window.EduAssistController();
+        
+        console.log('✅ EduAssist modules loaded successfully!');
+    } catch (error) {
+        console.error('❌ Error loading EduAssist modules:', error);
+    }
+}
+
+// Initialize after DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeEduAssist);
+} else {
+    initializeEduAssist();
+}

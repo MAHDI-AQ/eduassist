@@ -1,7 +1,7 @@
 # EduAssist Build Script
 # Creates a clean ZIP file for manual Chrome installation
 
-param([string]$version = "1.0.1")
+param([string]$version = "1.0.2")
 
 Write-Host "Building EduAssist v$version..." -ForegroundColor Green
 
