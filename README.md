@@ -1,4 +1,4 @@
-# <bdi>EduAssist</bdi> - المساعد التعليمي 🎓
+# EduAssist - المساعد التعليمي 🎓
 
 <div align="center">
 
@@ -23,7 +23,7 @@
 
 ### 📖 نبذة عن المشروع
 
-**<bdi>EduAssist</bdi>** أداة مجانية لتصدير البيانات من منصة مدرستي ونظام نور.
+**EduAssist** أداة مجانية لتصدير البيانات من منصة مدرستي ونظام نور.
 
 ### ✨ المزايا الرئيسية
 
@@ -36,13 +36,13 @@
 
 ### 🏫 المنصات المدعومة
 
-#### منصة مدرستي (<span dir="ltr">Madrasati.sa</span>)
+#### منصة مدرستي (Madrasati.sa)
 - تصدير بيانات الطلاب والفصول
 - تصدير سجلات الحضور والغياب
 - إنشاء تقارير مخصصة
 - تحسينات واجهة المستخدم
 
-#### نظام نور (<span dir="ltr">Noor.moe.gov.sa</span>)
+#### نظام نور (Noor.moe.gov.sa)
 - استخراج البيانات الإدارية
 - تصدير التقارير والإحصائيات
 - تسريع عمليات التنقل
@@ -50,34 +50,34 @@
 
 ### 🚀 التثبيت والاستخدام
 
-#### الطريقة الأولى: من متجر <span dir="ltr">Chrome</span> (قريباً)
-1. افتح [متجر <span dir="ltr">Chrome</span> الإلكتروني](https://chrome.google.com/webstore)
-2. ابحث عن "<bdi>EduAssist</bdi>"
-3. اضغط "إضافة إلى <span dir="ltr">Chrome</span>"
+#### الطريقة الأولى: من متجر Chrome (قريباً)
+1. افتح [متجر Chrome الإلكتروني](https://chrome.google.com/webstore)
+2. ابحث عن "EduAssist"
+3. اضغط "إضافة إلى Chrome"
 4. اقبل الصلاحيات المطلوبة
 5. ستظهر أيقونة الامتداد في شريط الأدوات
 
 #### الطريقة الثانية: التثبيت المطور (حالياً)
-1. حمّل الكود من <span dir="ltr">GitHub</span>:
+1. حمّل الكود من GitHub:
    ```bash
    git clone https://github.com/MAHDI-AQ/eduassist.git
    ```
-2. افتح <span dir="ltr">Chrome</span> واذهب إلى: `chrome://extensions/`
-3. فعّل "<span dir="ltr">Developer mode</span>" 
-4. اضغط "<span dir="ltr">Load unpacked</span>"
+2. افتح Chrome واذهب إلى: `chrome://extensions/`
+3. فعّل "Developer mode" 
+4. اضغط "Load unpacked"
 5. اختر مجلد المشروع
 
 ### 📱 دليل التثبيت للمتصفحات المختلفة
 
 <details>
-<summary><strong>🌐 <span dir="ltr">Google Chrome</span></strong></summary>
+<summary><strong>🌐 Google Chrome</strong></summary>
 
 **العربية:**
-1. افتح متصفح <span dir="ltr">Chrome</span>
+1. افتح متصفح Chrome
 2. اذهب إلى القائمة (ثلاث نقاط) ← المزيد من الأدوات ← الإضافات
-3. فعّل "<span dir="ltr">Developer mode</span>" في الزاوية اليمنى العلوية
-4. اضغط "<span dir="ltr">Load unpacked</span>"
-5. اختر مجلد <bdi>EduAssist</bdi>
+3. فعّل "Developer mode" في الزاوية اليمنى العلوية
+4. اضغط "Load unpacked"
+5. اختر مجلد EduAssist
 6. ستظهر الإضافة في قائمة الإضافات
 
 **English:**
@@ -91,15 +91,15 @@
 </details>
 
 <details>
-<summary><strong>⚡ <span dir="ltr">Microsoft Edge</span></strong></summary>
+<summary><strong>⚡ Microsoft Edge</strong></summary>
 
 **العربية:**
-1. افتح متصفح <span dir="ltr">Edge</span>
+1. افتح متصفح Edge
 2. اذهب إلى القائمة (ثلاث نقاط) ← الإضافات
-3. فعّل "<span dir="ltr">Developer mode</span>" في الزاوية اليسرى السفلية
-4. اضغط "<span dir="ltr">Load unpacked</span>"
-5. اختر مجلد <bdi>EduAssist</bdi>
-6. تعمل تماماً مثل <span dir="ltr">Chrome</span>
+3. فعّل "Developer mode" في الزاوية اليسرى السفلية
+4. اضغط "Load unpacked"
+5. اختر مجلد EduAssist
+6. تعمل تماماً مثل Chrome
 
 **English:**
 1. Open Edge browser
@@ -112,14 +112,14 @@
 </details>
 
 <details>
-<summary><strong>🎭 <span dir="ltr">Opera</span></strong></summary>
+<summary><strong>🎭 Opera</strong></summary>
 
 **العربية:**
-1. افتح متصفح <span dir="ltr">Opera</span>
+1. افتح متصفح Opera
 2. اذهب إلى القائمة ← الإضافات ← إدارة الإضافات
-3. فعّل "<span dir="ltr">Developer mode</span>" في الزاوية اليمنى العلوية
-4. اضغط "<span dir="ltr">Load unpacked</span>"
-5. اختر مجلد <bdi>EduAssist</bdi>
+3. فعّل "Developer mode" في الزاوية اليمنى العلوية
+4. اضغط "Load unpacked"
+5. اختر مجلد EduAssist
 
 **English:**
 1. Open Opera browser
@@ -131,14 +131,14 @@
 </details>
 
 <details>
-<summary><strong>🦁 <span dir="ltr">Brave</span></strong></summary>
+<summary><strong>🦁 Brave</strong></summary>
 
 **العربية:**
-1. افتح متصفح <span dir="ltr">Brave</span>
+1. افتح متصفح Brave
 2. اذهب إلى القائمة ← الإضافات
-3. فعّل "<span dir="ltr">Developer mode</span>"
-4. اضغط "<span dir="ltr">Load unpacked</span>"
-5. اختر مجلد <bdi>EduAssist</bdi>
+3. فعّل "Developer mode"
+4. اضغط "Load unpacked"
+5. اختر مجلد EduAssist
 
 **English:**
 1. Open Brave browser
@@ -150,10 +150,10 @@
 </details>
 
 <details>
-<summary><strong>🦊 <span dir="ltr">Mozilla Firefox</span></strong></summary>
+<summary><strong>🦊 Mozilla Firefox</strong></summary>
 
 **العربية:**
-> **ملاحظة:** <span dir="ltr">Firefox</span> يتطلب تحويل الإضافة إلى <span dir="ltr">Manifest V2</span>. حالياً الإضافة مخصصة للمتصفحات المبنية على <span dir="ltr">Chromium</span> فقط.
+> **ملاحظة:** Firefox يتطلب تحويل الإضافة إلى Manifest V2. حالياً الإضافة مخصصة للمتصفحات المبنية على Chromium فقط.
 
 **English:**
 > **Note:** Firefox requires converting the extension to Manifest V2. Currently, the extension is designed for Chromium-based browsers only.
@@ -162,16 +162,16 @@
 ### 🔧 كيفية الاستخدام
 
 1. **زيارة المنصة التعليمية**
-   - اذهب إلى موقع <span dir="ltr">madrasati.sa</span> أو <span dir="ltr">noor.moe.gov.sa</span>
-   - ستظهر أدوات <bdi>EduAssist</bdi> تلقائياً
+   - اذهب إلى موقع madrasati.sa أو noor.moe.gov.sa
+   - ستظهر أدوات EduAssist تلقائياً
 
 2. **تصدير البيانات**
    - ابحث عن أزرار "تصدير" الجديدة في الصفحات
-   - اختر التنسيق المطلوب (<span dir="ltr">CSV</span>، <span dir="ltr">Excel</span>، <span dir="ltr">JSON</span>)
+   - اختر التنسيق المطلوب (CSV، Excel، JSON)
    - احفظ الملف في المكان المناسب
 
 3. **إدارة الإعدادات**
-   - اضغط على أيقونة <bdi>EduAssist</bdi> في شريط الأدوات
+   - اضغط على أيقونة EduAssist في شريط الأدوات
    - انتقل إلى تبويب "الإعدادات"
    - خصص الخيارات حسب احتياجك
 
@@ -196,8 +196,8 @@
 
 ### 📞 الدعم والمساعدة
 
-- **<span dir="ltr">GitHub Issues</span>:** [رابط المشاكل](https://github.com/MAHDI-AQ/eduassist/issues)
-- **التوثيق:** [<span dir="ltr">wiki</span>](https://github.com/MAHDI-AQ/eduassist/wiki)
+- **GitHub Issues:** [رابط المشاكل](https://github.com/MAHDI-AQ/eduassist/issues)
+- **التوثيق:** [wiki](https://github.com/MAHDI-AQ/eduassist/wiki)
 - **المجتمع:** [النقاشات](https://github.com/MAHDI-AQ/eduassist/discussions)
 
 ---
@@ -208,7 +208,7 @@
 
 - **[ملف المساهمة](docs/CONTRIBUTING.md)** - دليل شامل للمطورين الراغبين في المساهمة
 - **[دليل التوزيع](docs/DISTRIBUTION.md)** - تعليمات نشر وتوزيع الإضافة
-- **[إعداد <span dir="ltr">Git</span>](docs/GIT_SETUP.md)** - كيفية إعداد بيئة التطوير
+- **[إعداد Git](docs/GIT_SETUP.md)** - كيفية إعداد بيئة التطوير
 - **[حالة المشروع](docs/PROJECT_STATUS.md)** - تحديثات ومسار تطوير المشروع
 
 ### 🎯 المزيد من المعلومات
@@ -237,7 +237,7 @@
 
 ### 📄 الترخيص
 
-هذا المشروع مرخص تحت [رخصة <span dir="ltr">CC BY-NC-SA 4.0</span>](LICENSE) - مشاع إبداعي غير تجاري. يمكنك استخدام وتطوير المشروع بحرية، لكن لا يُسمح بالاستخدام التجاري.
+هذا المشروع مرخص تحت [رخصة CC BY-NC-SA 4.0](LICENSE) - مشاع إبداعي غير تجاري. يمكنك استخدام وتطوير المشروع بحرية، لكن لا يُسمح بالاستخدام التجاري.
 
 ---
 
@@ -247,8 +247,8 @@
 
 *Made with ❤️ for the Saudi Educational Community*
 
-[![نجمة على <span dir="ltr">GitHub</span>](https://img.shields.io/github/stars/MAHDI-AQ/eduassist?style=social)](https://github.com/MAHDI-AQ/eduassist/stargazers)
-[![تابع على <span dir="ltr">GitHub</span>](https://img.shields.io/github/followers/MAHDI-AQ?style=social)](https://github.com/MAHDI-AQ)
+[![نجمة على GitHub](https://img.shields.io/github/stars/MAHDI-AQ/eduassist?style=social)](https://github.com/MAHDI-AQ/eduassist/stargazers)
+[![تابع على GitHub](https://img.shields.io/github/followers/MAHDI-AQ?style=social)](https://github.com/MAHDI-AQ)
 
 </div>
 
